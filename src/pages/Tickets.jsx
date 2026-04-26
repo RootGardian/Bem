@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Tickets = () => {
   const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState('visiteur');
+
+  const toggleSection = (id) => {
+    setActiveSection(activeSection === id ? null : id);
+  };
 
   const TicketCard = ({ price, title, features, badge, color = 'var(--bem-blue-night)' }) => (
     <div className="ticket-card">
@@ -26,76 +31,81 @@ const Tickets = () => {
     </div>
   );
 
+  const AccordionHeader = ({ id, title, isActive }) => (
+    <div 
+      className={`accordion-header ${isActive ? 'active' : ''}`}
+      onClick={() => toggleSection(id)}
+      style={{
+        background: 'white',
+        padding: '20px 25px',
+        borderRadius: '4px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        cursor: 'pointer',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
+        marginBottom: '10px',
+        borderLeft: isActive ? '5px solid var(--bem-red)' : '5px solid #eee',
+        transition: '0.3s'
+      }}
+    >
+      <h2 style={{ margin: 0, fontSize: '1.1rem', fontFamily: 'Montserrat', fontWeight: 700, color: isActive ? 'var(--bem-red)' : 'var(--bem-blue-night)' }}>{title}</h2>
+      <span style={{ 
+        transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)', 
+        transition: '0.3s',
+        fontSize: '1.5rem',
+        color: isActive ? 'var(--bem-red)' : '#ccc'
+      }}>▾</span>
+    </div>
+  );
+
   return (
-    <div style={{ padding: '80px 0', background: 'var(--bg-light)', minHeight: '60vh' }}>
-      <div className="container">
+    <div style={{ padding: '80px 0', background: 'var(--bg-light)', minHeight: '80vh' }}>
+      <div className="container" style={{ maxWidth: '900px' }}>
         <h1 style={{ textAlign: 'center', marginBottom: '50px', fontWeight: 800, fontSize: '2.5rem', fontFamily: 'Montserrat' }}>Billetterie & Sponsoring</h1>
         
         {/* INTERVENANT */}
-        <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Intervenant</h2>
-        <div className="tickets-grid">
-          <TicketCard price="OFFERT" title="Pass Intervenant" features={["Accès VIP Lounge", "Prise de parole sur scène", "Networking Privé"]} />
-        </div>
+        <AccordionHeader id="intervenant" title="Intervenant" isActive={activeSection === 'intervenant'} />
+        {activeSection === 'intervenant' && (
+          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
+            <div className="tickets-grid">
+              <TicketCard price="OFFERT" title="Pass Intervenant" features={["Accès VIP Lounge", "Prise de parole sur scène", "Networking Privé"]} />
+            </div>
+          </div>
+        )}
 
         {/* VISITEUR */}
-        <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Visiteurs</h2>
-        <div className="tickets-grid">
-          <TicketCard price="GRATUIT" title="Pass Visiteur" features={["Accès stands", "Conférences"]} />
-        </div>
+        <AccordionHeader id="visiteur" title="Visiteurs" isActive={activeSection === 'visiteur'} />
+        {activeSection === 'visiteur' && (
+          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
+            <div className="tickets-grid">
+              <TicketCard price="GRATUIT" title="Pass Visiteur" features={["Accès stands", "Conférences"]} />
+            </div>
+          </div>
+        )}
 
         {/* EXPOSANT */}
-        <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Exposant</h2>
-        <div className="tickets-grid">
-          <TicketCard 
-            price="25 000 CFA" 
-            title="Formule Standard" 
-            features={["Inclut un stand", "Accès aux panels"]} 
-          />
-          <TicketCard 
-            price="35 000 CFA" 
-            title="Formule Premium" 
-            features={["Inclut un stand", "Accès aux panels", "Déjeuners networking (Jour 1)"]} 
-          />
-          <TicketCard 
-            price="50 000 CFA" 
-            title="Formule Gold" 
-            badge="Top Seller"
-            features={["Stand en emplacement privilégié", "Accès aux panels", "Déjeuners networking (2 jours)"]} 
-          />
-        </div>
+        <AccordionHeader id="exposant" title="Exposant" isActive={activeSection === 'exposant'} />
+        {activeSection === 'exposant' && (
+          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
+            <div className="tickets-grid">
+              <TicketCard price="25 000 CFA" title="Formule Standard" features={["Inclut un stand", "Accès aux panels"]} />
+              <TicketCard price="35 000 CFA" title="Formule Premium" features={["Inclut un stand", "Accès aux panels", "Déjeuners networking (Jour 1)"]} />
+              <TicketCard price="50 000 CFA" title="Formule Gold" badge="Top Seller" features={["Stand en emplacement privilégié", "Accès aux panels", "Déjeuners networking (2 jours)"]} />
+            </div>
+          </div>
+        )}
 
         {/* NOS PACKS SPONSORING */}
-        <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Nos Packs Sponsoring</h2>
-        <div className="tickets-grid">
-          <TicketCard 
-            price="250 000 CFA" 
-            title="Pack Standard" 
-            features={[
-              "Logo sur les supports de communication",
-              "Visibilité sur les réseaux sociaux",
-              "2 invitations aux conférences",
-              "Stand d'exposition",
-              "Distribution de supports promotionnels",
-              "Association de l'image à l'événement"
-            ]} 
-          />
-          <TicketCard 
-            price="500 000 CFA" 
-            title="Pack Premium" 
-            badge="Best Value"
-            features={[
-              "Logo en position prioritaire sur tous les supports",
-              "Mention spéciale en tant que partenaire majeur",
-              "Forte visibilité sur les réseaux sociaux",
-              "4 invitations VIP aux conférences",
-              "Stand premium (emplacement stratégique)",
-              "Possibilité d'intervention (prise de parole)",
-              "Distribution de supports promotionnels",
-              "Association renforcée à l'événement",
-              "Tarif préférentiel Dakar Marketing"
-            ]} 
-          />
-        </div>
+        <AccordionHeader id="sponsoring" title="Nos Packs Sponsoring" isActive={activeSection === 'sponsoring'} />
+        {activeSection === 'sponsoring' && (
+          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
+            <div className="tickets-grid">
+              <TicketCard price="250 000 CFA" title="Pack Standard" features={["Logo sur les supports de communication", "Visibilité sur les réseaux sociaux", "2 invitations aux conférences", "Stand d'exposition", "Distribution de supports promotionnels", "Association de l'image à l'événement"]} />
+              <TicketCard price="500 000 CFA" title="Pack Premium" badge="Best Value" features={["Logo en position prioritaire sur tous les supports", "Mention spéciale en tant que partenaire majeur", "Forte visibilité sur les réseaux sociaux", "4 invitations VIP aux conférences", "Stand premium (emplacement stratégique)", "Possibilité d'intervention (prise de parole)", "Distribution de supports promotionnels", "Association renforcée à l'événement", "Tarif préférentiel Dakar Marketing"]} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
