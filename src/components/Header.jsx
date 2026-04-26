@@ -6,17 +6,18 @@ const Header = () => {
 
   return (
     <header style={{
-      background: 'var(--white)',
-      borderBottom: '3px solid var(--bem-red)',
-      padding: '10px 0',
+      background: 'rgba(255, 255, 255, 0.95)',
+      backdropFilter: 'blur(10px)',
+      borderBottom: '1px solid rgba(0,0,0,0.05)',
+      padding: '12px 0',
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      boxShadow: '0 2px 10px var(--bem-red-shadow)'
+      boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-          <img src="/Logo_DM.png" alt="Dakar Marketing" style={{ height: '45px', width: 'auto' }} />
+          <img src="/Logo_DM.png" alt="Dakar Marketing" style={{ height: '42px', width: 'auto' }} />
         </Link>
         
         {/* Mobile Toggle */}

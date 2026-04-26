@@ -16,36 +16,50 @@ const Home = () => {
   return (
     <main>
       {/* HERO SECTION */}
-      <section className="hero" style={{ padding: '100px 0', background: 'var(--bg-light)', borderBottom: '1px solid #eee', position: 'relative', overflow: 'hidden' }}>
-        <div className="container">
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, marginBottom: '20px', color: 'var(--bem-blue-night)', lineHeight: 1.1 }}>La Foire de <br />l'Entrepreneuriat</h1>
-          <p style={{ fontSize: '1.2rem', maxWidth: '600px', marginBottom: '40px', color: 'var(--text-gray)' }}>
-            Le rendez-vous incontournable de l'innovation et du leadership étudiant. Rejoignez la Junior Entreprise BEM Dakar pour deux jours d'échanges intenses.
+      <section className="hero" style={{ 
+        padding: '120px 0', 
+        background: 'linear-gradient(135deg, var(--bem-blue-night) 0%, #1a2a6c 100%)', 
+        position: 'relative', 
+        overflow: 'hidden',
+        color: 'white' 
+      }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.1, background: 'url("https://www.transparenttextures.com/patterns/carbon-fibre.png")' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'inline-block', background: 'rgba(209, 6, 61, 0.1)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '5px 15px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, marginBottom: '20px', letterSpacing: '1px' }}>
+            ÉVÉNEMENT 2026
+          </div>
+          <h1 style={{ fontSize: '4rem', fontWeight: 800, marginBottom: '20px', color: 'white', lineHeight: 1.1, textTransform: 'uppercase', letterSpacing: '-1px' }}>
+            La Foire de <br /><span style={{ color: 'var(--bem-red)' }}>l'Entrepreneuriat</span>
+          </h1>
+          <p style={{ fontSize: '1.2rem', maxWidth: '650px', marginBottom: '45px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.8' }}>
+            Le rendez-vous incontournable de l'innovation et du leadership étudiant. Rejoignez la Junior Entreprise BEM Dakar pour deux jours d'échanges stratégiques et d'opportunités.
           </p>
-          <div className="actions" style={{ display: 'flex', gap: '15px' }}>
-            <Link to="/tickets" className="btn btn-primary">Réserver mon pass</Link>
-            <a href="#" className="btn btn-secondary">En savoir plus</a>
+          <div className="actions" style={{ display: 'flex', gap: '20px' }}>
+            <Link to="/tickets" className="btn btn-primary" style={{ padding: '15px 35px' }}>Réserver mon pass</Link>
+            <a href="#evenement" className="btn" style={{ border: '2px solid white', color: 'white', padding: '13px 33px' }}>En savoir plus</a>
           </div>
         </div>
       </section>
 
       {/* EVENT SECTION (MOT DE LA PRÉSIDENTE) */}
-      <section id="evenement">
+      <section id="evenement" style={{ background: 'white', padding: '100px 0' }}>
         <div className="container">
-          <div className="section-title">
-            <h2>Le Mot de la Présidente</h2>
-          </div>
-          <div className="quote-block" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center', background: 'var(--bg-light)', padding: '60px', borderRadius: '4px' }}>
-            <div className="profile-img" style={{ border: '5px solid white', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', borderRadius: '4px', overflow: 'hidden' }}>
-              <img src="/team.png" alt="Makhtar Cissé" style={{ width: '100%', display: 'block' }} />
+          <div className="quote-block" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '80px', alignItems: 'center' }}>
+            <div className="profile-img" style={{ position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '100px', height: '100px', borderTop: '4px solid var(--bem-red)', borderLeft: '4px solid var(--bem-red)', zIndex: 0 }}></div>
+              <img src="/team.png" alt="Makhtar Cissé" style={{ width: '100%', borderRadius: '4px', position: 'relative', zIndex: 1, boxShadow: '20px 20px 0 var(--bg-light)' }} />
             </div>
             <div className="quote-content">
-              <blockquote style={{ fontSize: '1.5rem', fontWeight: 400, fontStyle: 'italic', marginBottom: '30px', color: 'var(--text-dark)', position: 'relative' }}>
-                "En tant que Junior Entreprise, notre mission est de transformer les étudiants en futurs leaders. 'La Foire' est le catalyseur de cette ambition à Dakar."
+              <div style={{ color: 'var(--bem-red)', fontSize: '4rem', fontFamily: 'serif', lineHeight: 0, marginBottom: '20px', opacity: 0.3 }}>&ldquo;</div>
+              <blockquote style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--bem-blue-night)', marginBottom: '40px', lineHeight: '1.4', position: 'relative', marginTop: '-20px' }}>
+                En tant que Junior Entreprise, notre mission est de transformer les étudiants en futurs leaders. <span style={{ color: 'var(--bem-red)' }}>'La Foire'</span> est le catalyseur de cette ambition à Dakar.
               </blockquote>
-              <div className="signature" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.1rem', color: 'var(--bem-red)' }}>
-                Makhtar Cissé
-                <span style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-gray)', textTransform: 'uppercase' }}>Président, Junior Entreprise BEM Dakar</span>
+              <div className="signature" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                <div style={{ width: '40px', height: '2px', background: 'var(--bem-red)' }}></div>
+                <div>
+                  <div style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.2rem', color: 'var(--bem-blue-night)', textTransform: 'uppercase', letterSpacing: '1px' }}>Makhtar Cissé</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-gray)', fontWeight: 600 }}>Président, Junior Entreprise BEM Dakar</div>
+                </div>
               </div>
             </div>
           </div>
@@ -53,39 +67,45 @@ const Home = () => {
       </section>
 
       {/* DAKAR MARKETING PRESENTATION */}
-      <section id="presentation" style={{ background: 'white' }}>
+      <section id="presentation" style={{ background: 'var(--bg-light)', padding: '100px 0' }}>
         <div className="container">
-          <div className="info-block">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '80px', alignItems: 'center' }}>
             <div className="info-content">
-              <img src="/Logo_DM.png" alt="Logo Dakar Marketing" style={{ height: '80px', marginBottom: '20px' }} />
-              <h3 className="font-montserrat">Qu'est-ce que Dakar Marketing ?</h3>
-              <p>
+              <div style={{ background: 'white', display: 'inline-flex', padding: '15px', borderRadius: '4px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', marginBottom: '30px' }}>
+                <img src="/Logo_DM.png" alt="Logo Dakar Marketing" style={{ height: '60px' }} />
+              </div>
+              <h3 className="font-montserrat" style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--bem-blue-night)', marginBottom: '25px', lineHeight: '1.2' }}>L'excellence au service de <span style={{ color: 'var(--bem-red)' }}>votre croissance</span></h3>
+              <p style={{ fontSize: '1.1rem', marginBottom: '20px', color: 'var(--text-dark)' }}>
                 Dakar Marketing est la Junior Entreprise de BEM Dakar, créée en 2014. Elle est la 1ère Junior Entreprise certifiée <strong>JE Global</strong> en Afrique subsaharienne.
               </p>
-              <p>
+              <p style={{ color: 'var(--text-gray)', marginBottom: '30px' }}>
                 Structurée comme un véritable cabinet de conseil, elle accompagne les entreprises dans leurs problématiques de marketing stratégique, digital et d'études de marché.
               </p>
-              <p>
-                Notre mission est de proposer des solutions innovantes, efficaces et adaptées aux besoins de nos clients, tout en garantissant des tarifs compétitifs.
-              </p>
+              <div style={{ display: 'flex', gap: '30px' }}>
+                <div>
+                  <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--bem-red)' }}>10+</div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--bem-blue-night)', textTransform: 'uppercase' }}>Ans d'expertise</div>
+                </div>
+                <div style={{ width: '1px', background: '#ddd' }}></div>
+                <div>
+                  <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--bem-red)' }}>500+</div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--bem-blue-night)', textTransform: 'uppercase' }}>Études réalisées</div>
+                </div>
+              </div>
             </div>
-            <div className="values-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              <div className="feature-card" style={{ padding: '25px' }}>
-                <div style={{ color: 'var(--bem-red)', fontWeight: 800, fontSize: '1.5rem', marginBottom: '10px' }}>01</div>
-                <h4 className="font-montserrat" style={{ fontSize: '0.9rem' }}>Innovation</h4>
-              </div>
-              <div className="feature-card" style={{ padding: '25px' }}>
-                <div style={{ color: 'var(--bem-red)', fontWeight: 800, fontSize: '1.5rem', marginBottom: '10px' }}>02</div>
-                <h4 className="font-montserrat" style={{ fontSize: '0.9rem' }}>Excellence</h4>
-              </div>
-              <div className="feature-card" style={{ padding: '25px' }}>
-                <div style={{ color: 'var(--bem-red)', fontWeight: 800, fontSize: '1.5rem', marginBottom: '10px' }}>03</div>
-                <h4 className="font-montserrat" style={{ fontSize: '0.9rem' }}>Réactivité</h4>
-              </div>
-              <div className="feature-card" style={{ padding: '25px' }}>
-                <div style={{ color: 'var(--bem-red)', fontWeight: 800, fontSize: '1.5rem', marginBottom: '10px' }}>04</div>
-                <h4 className="font-montserrat" style={{ fontSize: '0.9rem' }}>Efficacité</h4>
-              </div>
+            <div className="values-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+              {[
+                { n: '01', t: 'Innovation', d: 'Solutions créatives et adaptées' },
+                { n: '02', t: 'Excellence', d: 'Rigueur et qualité académique' },
+                { n: '03', t: 'Réactivité', d: 'Respect strict des délais' },
+                { n: '04', t: 'Efficacité', d: 'Impact mesurable pour nos clients' }
+              ].map((v, i) => (
+                <div key={i} className="feature-card" style={{ padding: '30px', textAlign: 'left', background: 'white' }}>
+                  <div style={{ color: 'var(--bem-red)', fontWeight: 800, fontSize: '1.2rem', marginBottom: '15px', opacity: 0.5 }}>{v.n}</div>
+                  <h4 className="font-montserrat" style={{ fontSize: '1rem', marginBottom: '10px', color: 'var(--bem-blue-night)', fontWeight: 800 }}>{v.t}</h4>
+                  <p style={{ fontSize: '0.8rem', margin: 0, color: 'var(--text-gray)' }}>{v.d}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -281,12 +301,13 @@ const Home = () => {
       </section>
 
       {/* PARTNERS SECTION */}
-      <section id="partenaires" style={{ background: 'var(--bg-light)' }}>
+      <section id="partenaires" style={{ background: 'white', padding: '100px 0' }}>
         <div className="container">
           <div className="section-title">
-            <h2>Nos Partenaires</h2>
+            <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>Ils nous font confiance</h2>
+            <p style={{ color: 'var(--text-gray)', marginTop: '-10px' }}>Partenaires institutionnels et entreprises partenaires de la Foire.</p>
           </div>
-          <div className="partner-grid">
+          <div className="partner-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2px', background: '#f0f0f0', border: '1px solid #f0f0f0' }}>
             {[
               { name: 'Kirène avec Orange', src: 'kirene.png' },
               { name: 'Supeco', src: 'supeco.png' },
@@ -301,30 +322,34 @@ const Home = () => {
             ].map((p, i) => (
               <div key={i} className="partner-item" style={{ 
                 background: 'white', 
-                padding: '20px', 
-                borderRadius: '8px', 
-                boxShadow: '0 5px 15px var(--bem-red-shadow)',
+                padding: '40px', 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                minHeight: '120px',
-                transition: 'transform 0.3s'
+                minHeight: '150px',
+                transition: 'all 0.3s'
               }}>
                 <img 
-                  src={`/${p.src}`} 
-                  alt={p.name} 
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '70px', 
-                    objectFit: 'contain',
-                    transition: 'all 0.3s'
-                  }} 
-                  onMouseOver={e => {
-                    e.currentTarget.parentElement.style.transform = 'translateY(-5px)';
-                  }}
-                  onMouseOut={e => {
-                    e.currentTarget.parentElement.style.transform = 'translateY(0)';
-                  }}
+                   src={`/${p.src}`} 
+                   alt={p.name} 
+                   style={{ 
+                     maxWidth: '100%', 
+                     maxHeight: '60px', 
+                     objectFit: 'contain',
+                     filter: 'grayscale(100%)',
+                     opacity: 0.6,
+                     transition: 'all 0.3s'
+                   }} 
+                   onMouseOver={e => {
+                     e.currentTarget.style.filter = 'grayscale(0%)';
+                     e.currentTarget.style.opacity = '1';
+                     e.currentTarget.parentElement.style.boxShadow = 'inset 0 0 20px rgba(0,0,0,0.05)';
+                   }}
+                   onMouseOut={e => {
+                     e.currentTarget.style.filter = 'grayscale(100%)';
+                     e.currentTarget.style.opacity = '0.6';
+                     e.currentTarget.parentElement.style.boxShadow = 'none';
+                   }}
                 />
               </div>
             ))}

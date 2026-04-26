@@ -1,14 +1,15 @@
 :root {
   --bem-red: #D1063D;
   --bem-red-dark: #C40030;
-  --bem-blue-night: #1B2631;
-  --text-dark: #2C3E50;
-  --text-gray: #7F8C8D;
+  --bem-blue-night: #0D1B2A;
+  --bem-blue-light: #1B2631;
+  --text-dark: #1B2631;
+  --text-gray: #5D6D7E;
   --white: #FFFFFF;
-  --bg-light: #F9F9F9;
+  --bg-light: #F4F7F9;
   --border-radius: 4px;
-  --bem-red-shadow: rgba(209, 6, 61, 0.15);
-  --bem-red-shadow-heavy: rgba(209, 6, 61, 0.25);
+  --bem-red-shadow: rgba(209, 6, 61, 0.1);
+  --bem-red-shadow-heavy: rgba(209, 6, 61, 0.2);
 }
 
 * {
@@ -50,16 +51,17 @@ h1, h2, h3, .font-montserrat {
 
 .btn {
   display: inline-block;
-  padding: 14px 30px;
+  padding: 12px 28px;
   border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: none;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
@@ -124,14 +126,16 @@ section {
   background: white;
   padding: 40px 30px;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 30px var(--bem-red-shadow);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px var(--bem-red-shadow-heavy);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  border-color: var(--bem-red);
 }
 
 .feature-card i {
@@ -142,14 +146,16 @@ section {
 }
 
 .feature-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 15px;
   color: var(--bem-blue-night);
+  font-weight: 700;
 }
 
 .feature-card p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-gray);
+  line-height: 1.6;
 }
 
 /* Info Blocks */
