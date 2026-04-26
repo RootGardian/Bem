@@ -40,7 +40,7 @@ const Home = () => {
             <Link to="/tickets" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '1rem', borderRadius: '4px' }}>Réserver mon pass</Link>
             <a href="#evenement" className="btn" style={{ padding: '18px 45px', fontSize: '1rem', border: '2px solid white', color: 'white', borderRadius: '4px', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-              En savoir plus
+              Mot du President
             </a>
           </div>
 
