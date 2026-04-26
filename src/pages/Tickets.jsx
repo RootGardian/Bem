@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Tickets = () => {
   const navigate = useNavigate();
@@ -62,6 +62,10 @@ const Tickets = () => {
   return (
     <div style={{ padding: '100px 0', background: 'var(--bg-light)', minHeight: '80vh' }}>
       <div className="container" style={{ maxWidth: '850px' }}>
+        <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--bem-red)', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', marginBottom: '30px', textTransform: 'uppercase' }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Retour à l'accueil
+        </Link>
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(209, 6, 61, 0.1)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '5px 15px', borderRadius: '50px', fontSize: '0.7rem', fontWeight: 800, marginBottom: '15px', letterSpacing: '1px' }}>
             BILLETTERIE OFFICIELLE

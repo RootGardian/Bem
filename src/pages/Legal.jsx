@@ -12,7 +12,7 @@ const Legal = () => {
             Le présent site est édité par <strong>Dakar Marketing</strong>, la Junior Entreprise de BEM Dakar.<br />
             Siège social : Sacré Cœur 3, Dakar, Sénégal.<br />
             Email : contact@dakarmarketing.sn<br />
-            Téléphone : +221 33 869 82 81
+            Téléphone : +221 71 122 83 83
           </p>
         </section>
 

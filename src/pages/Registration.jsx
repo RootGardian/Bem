@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
   const [form, setForm] = useState({
@@ -27,6 +28,10 @@ const Registration = () => {
   return (
     <div style={{ padding: '100px 0', background: 'var(--bg-light)', minHeight: '80vh' }}>
       <div className="container">
+        <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--bem-red)', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', marginBottom: '30px', textTransform: 'uppercase' }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Retour à l'accueil
+        </Link>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '50px' }}>
           {/* FORM */}
           <div style={{ background: 'white', padding: '40px', borderRadius: '4px', boxShadow: '0 10px 40px rgba(0,0,0,0.05)', borderTop: '5px solid var(--bem-red)' }}>
