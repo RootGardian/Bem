@@ -133,8 +133,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section></div>
-        </div>
       </section>
 
       {/* CONCEPT & OBJECTIVES */}
