@@ -684,3 +684,57 @@ section {
 .service-link:hover {
   gap: 12px;
 }
+
+/* FLOATING ACTION BUTTON */
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.fab-main {
+  width: 60px;
+  height: 60px;
+  background: var(--bem-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(196, 0, 48, 0.4);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  outline: none;
+}
+
+.fab-main:hover {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--bem-red-dark);
+}
+
+.fab-label {
+  background: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--bem-blue-night);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fab-container:hover .fab-label {
+  opacity: 1;
+  transform: translateX(0);
+}
