@@ -393,3 +393,14 @@ section {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.footer-logo {
+  height: 50px;
+}
+
+@media (max-width: 576px) {
+  .footer-logo {
+    height: 40px;
+  }
+}
+
+
