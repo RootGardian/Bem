@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -20,10 +20,10 @@ const Footer = () => {
           <div className="footer-col">
             <h4 style={{ fontSize: '1rem', marginBottom: '20px', color: 'var(--bem-red)', fontFamily: 'Montserrat', textTransform: 'uppercase' }}>Navigation</h4>
             <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '10px' }}><a href="/" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Accueil</a></li>
+              <li style={{ marginBottom: '10px' }}><Link to="/" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Accueil</Link></li>
               <li style={{ marginBottom: '10px' }}><a href="/#evenement" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>À Propos</a></li>
-              <li style={{ marginBottom: '10px' }}><a href="/#evenement" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Services</a></li>
-              <li style={{ marginBottom: '10px' }}><a href="/#partenaires" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Études Réalisées</a></li>
+              <li style={{ marginBottom: '10px' }}><a href="/#pourquoi-nous" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Services</a></li>
+              <li style={{ marginBottom: '10px' }}><Link to="/tickets" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Billetterie</Link></li>
             </ul>
           </div>
 
@@ -41,8 +41,9 @@ const Footer = () => {
           <div className="footer-col">
             <h4 style={{ fontSize: '1rem', marginBottom: '20px', color: 'var(--bem-red)', fontFamily: 'Montserrat', textTransform: 'uppercase' }}>Légal</h4>
             <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Mentions Légales</a></li>
-              <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Politique de Confidentialité</a></li>
+              <li style={{ marginBottom: '10px' }}><Link to="/legal" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Mentions Légales</Link></li>
+              <li style={{ marginBottom: '10px' }}><Link to="/privacy" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Confidentialité</Link></li>
+              <li style={{ marginBottom: '10px' }}><Link to="/terms" style={{ color: '#bdc3c7', fontSize: '0.85rem', textDecoration: 'none' }}>Conditions Générales</Link></li>
             </ul>
           </div>
         </div>

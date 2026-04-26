@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <main>
       {/* HERO SECTION */}
-      <section className="hero" style={{ 
+      <section className="hero" style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -26,7 +26,7 @@ const Home = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        position: 'relative', 
+        position: 'relative',
         overflow: 'hidden',
         color: 'white',
         textAlign: 'center',
@@ -67,7 +67,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-        
+
         {/* Floating Arrow */}
         <div style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)', animation: 'bounce 2s infinite', color: 'white' }}>
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path></svg>
@@ -90,7 +90,7 @@ const Home = () => {
               <div className="signature" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <div style={{ width: '40px', height: '2px', background: 'var(--bem-red)' }}></div>
                 <div>
-                  <div style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.2rem', color: 'var(--bem-blue-night)', textTransform: 'uppercase', letterSpacing: '1px' }}>Makhtar Cissé</div>
+                  <div style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.2rem', color: 'var(--bem-blue-night)', textTransform: 'uppercase', letterSpacing: '1px' }}>Mouhamadou Makhtar Cissé</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-gray)', fontWeight: 600 }}>Président, Junior Entreprise BEM Dakar</div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ const Home = () => {
                 { n: '03', t: 'Réactivité', d: 'Respect strict des délais et agilité opérationnelle.' },
                 { n: '04', t: 'Efficacité', d: 'Impact mesurable et concret pour nos clients.' }
               ].map((v, i) => (
-                <div key={i} className={`feature-card animate-fade-in stagger-${i+2}`} style={{ padding: '35px', textAlign: 'left', background: 'white' }}>
+                <div key={i} className={`feature-card animate-fade-in stagger-${i + 2}`} style={{ padding: '35px', textAlign: 'left', background: 'white' }}>
                   <div style={{ color: 'var(--bem-red)', fontWeight: 900, fontSize: '1.4rem', marginBottom: '15px', opacity: 0.3 }}>{v.n}</div>
                   <h4 className="font-montserrat" style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'var(--bem-blue-night)', fontWeight: 800 }}>{v.t}</h4>
                   <p style={{ fontSize: '0.85rem', margin: 0, color: 'var(--text-gray)', lineHeight: '1.6' }}>{v.d}</p>
@@ -217,17 +217,17 @@ const Home = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/tickets" style={{ 
-                  display: 'block', 
-                  width: '100%', 
-                  background: 'white', 
-                  color: 'var(--bem-red)', 
-                  textAlign: 'center', 
-                  padding: '18px', 
-                  borderRadius: '4px', 
-                  textDecoration: 'none', 
-                  fontWeight: 800, 
-                  fontSize: '0.9rem', 
+                <Link to="/tickets" style={{
+                  display: 'block',
+                  width: '100%',
+                  background: 'white',
+                  color: 'var(--bem-red)',
+                  textAlign: 'center',
+                  padding: '18px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontWeight: 800,
+                  fontSize: '0.9rem',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
                   transition: '0.3s'
@@ -367,10 +367,10 @@ const Home = () => {
               { name: 'Supeco', src: 'supeco.png' },
               { name: 'Advention', src: 'advention.jpeg' }
             ].map((p, i) => (
-              <div key={i} style={{ 
-                background: 'white', 
-                padding: '40px 20px', 
-                borderRadius: '16px', 
+              <div key={i} style={{
+                background: 'white',
+                padding: '40px 20px',
+                borderRadius: '16px',
                 boxShadow: '0 4px 25px rgba(0,0,0,0.03)',
                 display: 'flex',
                 alignItems: 'center',
@@ -378,17 +378,17 @@ const Home = () => {
                 minHeight: '200px',
                 transition: 'transform 0.3s ease'
               }}
-              onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'}
-              onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
+                onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'}
+                onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
               >
-                <img 
-                   src={`/${p.src}`} 
-                   alt={p.name} 
-                   style={{ 
-                     maxWidth: '80%', 
-                     maxHeight: '80px', 
-                     objectFit: 'contain'
-                   }} 
+                <img
+                  src={`/${p.src}`}
+                  alt={p.name}
+                  style={{
+                    maxWidth: '80%',
+                    maxHeight: '80px',
+                    objectFit: 'contain'
+                  }}
                 />
               </div>
             ))}
