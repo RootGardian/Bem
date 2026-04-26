@@ -18,7 +18,10 @@ const Home = () => {
     <main>
       {/* HERO SECTION */}
       <section className="hero" style={{ 
-        padding: '160px 0', 
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         background: 'linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -26,7 +29,8 @@ const Home = () => {
         position: 'relative', 
         overflow: 'hidden',
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: '100px 0'
       }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="animate-fade-in stagger-1" style={{ display: 'inline-block', background: 'rgba(196, 0, 48, 0.15)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '6px 20px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, marginBottom: '25px', letterSpacing: '2px' }}>
