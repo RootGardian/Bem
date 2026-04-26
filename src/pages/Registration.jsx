@@ -107,7 +107,7 @@ const Registration = () => {
         </div>
       </div>
     </div>
-  );  );
+  );
 };
 
 export default Registration;
