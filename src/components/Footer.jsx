@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Column 1: DM Info */}
           <div className="footer-col">
             <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <img src="/Logo_DM.png" alt="Dakar Marketing" className="footer-logo" style={{ width: 'fit-content', marginBottom: '15px' }} />
+              <img src="/Logo_DM.png" alt="Dakar Marketing" className="footer-logo" style={{ height: '60px', width: 'auto', marginBottom: '15px', filter: 'brightness(0) invert(1)', objectFit: 'contain' }} />
               <h4 style={{ color: 'var(--white)', fontWeight: 800, fontSize: '1.2rem', fontFamily: 'Montserrat', margin: 0 }}>Dakar Marketing</h4>
             </div>
             <p style={{ color: '#bdc3c7', fontSize: '0.85rem', lineHeight: '1.6' }}>

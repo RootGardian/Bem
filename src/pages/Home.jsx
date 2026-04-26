@@ -30,7 +30,7 @@ const Home = () => {
             La Foire de <br />l'Entrepreneuriat
           </h1>
           <p className="animate-fade-in stagger-3" style={{ fontSize: '1.5rem', maxWidth: '900px', margin: '0 auto 10px', color: 'white', lineHeight: '1.4', fontWeight: 500, fontFamily: 'Montserrat' }}>
-            L'événement entrepreneurial majeur de BEM Dakar
+            L'événement entrepreneurial majeur de DAKAR MARKETING
           </p>
           <p className="animate-fade-in stagger-3" style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto 40px', color: 'rgba(255,255,255,0.9)', lineHeight: '1.6', fontWeight: 400 }}>
             Connectez-vous à l'innovation, découvrez des projets disruptifs et rencontrez les leaders de demain. Deux jours pour transformer vos idées en business.
@@ -46,7 +46,7 @@ const Home = () => {
 
           <div className="stats-row animate-fade-in stagger-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
             {[
-              { n: '10+', t: "ÉDITIONS PASSÉES" },
+              { n: '2', t: "ÉDITIONS PASSÉES" },
               { n: '300+', t: "VISITEURS ATTENDUS" },
               { n: '30+', t: "EXPOSANTS" }
             ].map((s, idx) => (
