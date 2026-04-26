@@ -347,40 +347,7 @@ const Home = () => {
       </section>
 
       {/* WHY COLLABORATE */}
-      <section id="collaboration" style={{ background: 'white' }}>
-        <div className="container">
-          <div className="info-block">
-            <div className="info-content">
-              <h2 className="font-montserrat" style={{ color: 'var(--bem-blue-night)', marginBottom: '30px' }}>Pourquoi collaborer avec nous ?</h2>
-              <p style={{ fontSize: '1.1rem', marginBottom: '30px' }}>
-                En devenant partenaire de la Foire de l'Entrepreneuriat, vous associez votre image à une initiative en faveur de la jeunesse, de l'innovation et du développement économique.
-              </p>
-              <ul className="bem-list">
-                <li>Renforcer votre visibilité auprès d'un public ciblé</li>
-                <li>Valoriser votre engagement sociétal et RSE</li>
-                <li>Créer des connexions stratégiques avec l'écosystème</li>
-                <li>Identifier et recruter de nouveaux talents</li>
-                <li>Contribuer à la promotion de l'entrepreneuriat au Sénégal</li>
-              </ul>
-            </div>
-            <div style={{ background: 'var(--bem-red)', padding: '40px', borderRadius: '4px', color: 'white' }}>
-              <h4 className="font-montserrat" style={{ marginBottom: '20px', fontSize: '1.2rem' }}>Cibles de l'événement</h4>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li style={{ marginBottom: '15px', display: 'flex', gap: '10px' }}>
-                  <span>▪</span> Étudiants entrepreneurs & porteurs de projets
-                </li>
-                <li style={{ marginBottom: '15px', display: 'flex', gap: '10px' }}>
-                  <span>▪</span> Startups développées au sein des grandes écoles
-                </li>
-                <li style={{ marginBottom: '15px', display: 'flex', gap: '10px' }}>
-                  <span>▪</span> Partenaires institutionnels et professionnels
-                </li>
-              </ul>
-              <button className="btn" style={{ background: 'white', color: 'var(--bem-red)', marginTop: '20px', width: '100%' }}>Devenir Partenaire</button>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* PARTNERS SECTION */}
       <section id="partenaires" style={{ background: '#F8FAFC', padding: '100px 0' }}>
