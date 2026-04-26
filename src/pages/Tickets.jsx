@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const Tickets = () => {
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState('visiteur');
+  const [activeSection, setActiveSection] = useState(null);
 
   const toggleSection = (id) => {
     setActiveSection(activeSection === id ? null : id);
