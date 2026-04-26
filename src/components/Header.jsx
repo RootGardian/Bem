@@ -81,12 +81,14 @@ const Header = () => {
           <li>
             <Link to="/tickets" onClick={() => setIsMenuOpen(false)} style={{ 
               ...navLinkStyle, 
-              color: 'var(--bem-red)',
-              background: !scrolled && !isMenuOpen ? 'rgba(255,255,255,0.1)' : 'transparent',
-              padding: !scrolled && !isMenuOpen ? '8px 15px' : '0',
-              borderRadius: '4px'
+              color: scrolled || isMenuOpen ? 'var(--bem-red)' : 'var(--bem-red)',
+              background: 'white',
+              padding: '12px 25px',
+              borderRadius: '50px',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+              marginLeft: '20px'
             }}>
-              Billetterie
+              Réserver mon Pass
             </Link>
           </li>
         </ul>

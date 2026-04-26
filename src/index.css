@@ -577,10 +577,10 @@ section {
 }
 
 .program-tab.active {
-  background: var(--bem-blue-night);
+  background: var(--bem-red);
   color: white;
-  border-color: var(--bem-blue-night);
-  box-shadow: 0 10px 25px rgba(27, 38, 49, 0.2);
+  border-color: var(--bem-red);
+  box-shadow: 0 10px 25px rgba(196, 0, 48, 0.2);
 }
 
 .program-tab:hover:not(.active) {
@@ -609,4 +609,78 @@ section {
   height: 100%;
   background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
   opacity: 0.1;
+}
+.service-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.service-image-container {
+  position: relative;
+  height: 200px;
+}
+
+.service-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-icon-badge {
+  position: absolute;
+  bottom: -25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background: var(--bem-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(196, 0, 48, 0.2);
+  z-index: 2;
+}
+
+.service-content {
+  padding: 45px 25px 30px;
+}
+
+.service-content h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: var(--bem-blue-night);
+}
+
+.service-content p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.service-link {
+  color: var(--bem-red);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s;
+}
+
+.service-link:hover {
+  gap: 12px;
 }

@@ -22,7 +22,7 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80")',
+        background: 'linear-gradient(rgba(13, 27, 42, 0.4), rgba(13, 27, 42, 0.4)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -36,39 +36,41 @@ const Home = () => {
           <div className="animate-fade-in stagger-1" style={{ display: 'inline-block', background: 'rgba(196, 0, 48, 0.15)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '6px 20px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, marginBottom: '25px', letterSpacing: '2px' }}>
             DAKAR MARKETING • JUNIOR ENTREPRISE
           </div>
-          <h1 className="font-serif animate-fade-in stagger-2" style={{ fontSize: '4.8rem', fontWeight: 900, marginBottom: '20px', color: 'white', lineHeight: 1, letterSpacing: '-2px', textTransform: 'none' }}>
-            La Foire de <br /><span style={{ color: 'var(--bem-red)', fontStyle: 'italic' }}>l'Entrepreneuriat</span>
+          <h1 className="font-serif animate-fade-in stagger-2" style={{ fontSize: '5.5rem', fontWeight: 900, marginBottom: '20px', color: 'white', lineHeight: 1, letterSpacing: '-2px' }}>
+            La Foire de <br />l'Entrepreneuriat
           </h1>
-          <p className="animate-fade-in stagger-3" style={{ fontSize: '1.3rem', maxWidth: '800px', margin: '0 auto 50px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.8', fontWeight: 400 }}>
-            Le rendez-vous incontournable de l'innovation et du leadership étudiant à Dakar. Rejoignez-nous pour deux jours d'échanges stratégiques organisés par Dakar Marketing.
+          <p className="animate-fade-in stagger-3" style={{ fontSize: '1.5rem', maxWidth: '900px', margin: '0 auto 10px', color: 'white', lineHeight: '1.4', fontWeight: 500, fontFamily: 'Montserrat' }}>
+            L'événement entrepreneurial majeur de BEM Dakar
           </p>
-          <div className="actions animate-fade-in stagger-4" style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-            <Link to="/tickets" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '0.9rem' }}>Réserver mon pass</Link>
-            <a href="#presentation" className="btn" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'white', padding: '15px 38px', backdropFilter: 'blur(5px)', background: 'rgba(255,255,255,0.05)' }}>Découvrir nos services</a>
+          <p className="animate-fade-in stagger-3" style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto 40px', color: 'rgba(255,255,255,0.9)', lineHeight: '1.6', fontWeight: 400 }}>
+            Connectez-vous à l'innovation, découvrez des projets disruptifs et rencontrez les leaders de demain. Deux jours pour transformer vos idées en business.
+          </p>
+
+          <div className="actions animate-fade-in stagger-4" style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginBottom: '80px' }}>
+            <Link to="/tickets" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '1rem', borderRadius: '4px' }}>Réserver mon pass</Link>
+            <a href="#evenement" className="btn" style={{ padding: '18px 45px', fontSize: '1rem', border: '2px solid white', color: 'white', borderRadius: '4px', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              En savoir plus
+            </a>
+          </div>
+
+          <div className="stats-row animate-fade-in stagger-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
+            {[
+              { n: '10+', t: "ÉDITIONS PASSÉES" },
+              { n: '1000+', t: "VISITEURS ATTENDUS" },
+              { n: '50+', t: "EXPOSANTS" }
+            ].map((s, idx) => (
+              <div key={idx} className="stats-card-tech" style={{ padding: '30px', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}>
+                <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-red)', marginBottom: '5px', fontFamily: 'Montserrat' }}>{s.n}</div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'white', letterSpacing: '1px' }}>{s.t}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-
-      {/* STATS SECTION - TECH STYLE */}
-      <section style={{ background: 'var(--bem-blue-night)', padding: '80px 0', marginTop: '-40px', position: 'relative', zIndex: 2 }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
-            <div className="stats-card-tech animate-fade-in stagger-1">
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-red)', marginBottom: '5px', fontFamily: 'Montserrat' }}>10+</div>
-              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'white', textTransform: 'uppercase', letterSpacing: '2px' }}>Années d'expérience</div>
-              <div style={{ width: '30px', height: '2px', background: 'var(--bem-red)', marginTop: '15px' }}></div>
-            </div>
-            <div className="stats-card-tech animate-fade-in stagger-2">
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-red)', marginBottom: '5px', fontFamily: 'Montserrat' }}>100+</div>
-              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'white', textTransform: 'uppercase', letterSpacing: '2px' }}>Projets réalisés</div>
-              <div style={{ width: '30px', height: '2px', background: 'var(--bem-red)', marginTop: '15px' }}></div>
-            </div>
-            <div className="stats-card-tech animate-fade-in stagger-3">
-              <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-red)', marginBottom: '5px', fontFamily: 'Montserrat' }}>50+</div>
-              <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'white', textTransform: 'uppercase', letterSpacing: '2px' }}>Clients satisfaits</div>
-              <div style={{ width: '30px', height: '2px', background: 'var(--bem-red)', marginTop: '15px' }}></div>
-            </div>
-          </div>
+        
+        {/* Floating Arrow */}
+        <div style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)', animation: 'bounce 2s infinite', color: 'white' }}>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path></svg>
         </div>
       </section>
 
@@ -169,42 +171,55 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FORMAT DE LA FOIRE */}
-      <section id="format" style={{ background: 'white', padding: '100px 0' }}>
+      {/* POURQUOI COLLABORER AVEC NOUS */}
+      <section id="pourquoi-nous" style={{ background: 'white', padding: '120px 0' }}>
         <div className="container">
-          <div className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 className="font-serif animate-fade-in" style={{ fontSize: '2.8rem', fontWeight: 900, color: 'var(--bem-blue-night)', textTransform: 'none' }}>Format de la Foire</h2>
-            <div style={{ width: '60px', height: '4px', background: 'var(--bem-red)', margin: '20px auto' }}></div>
+          <div className="section-title" style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 className="font-serif animate-fade-in" style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-blue-night)', textTransform: 'none' }}>Pourquoi collaborer avec nous ?</h2>
+            <p style={{ color: 'var(--text-gray)', fontSize: '1.1rem', marginTop: '10px' }}>Une expertise certifiée pour des solutions marketing à fort impact.</p>
           </div>
-          <div className="feature-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
-            <div className="feature-card animate-fade-in stagger-1">
-              <div style={{ color: 'var(--bem-red)', fontSize: '2rem', marginBottom: '20px' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+            {[
+              { 
+                t: "Expertise de Pointe", 
+                d: "Élaborez des stratégies solides grâce à nos consultants formés aux dernières méthodologies marketing.",
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              },
+              { 
+                t: "Rigueur Académique", 
+                d: "Chaque étude bénéficie de la supervision d'experts et d'enseignants-chercheurs de BEM Dakar.",
+                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              },
+              { 
+                t: "Impact Garanti", 
+                d: "Collectez des insights précieux pour affiner votre stratégie et booster votre performance sur le marché.",
+                img: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=600&q=80",
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+              }
+            ].map((s, i) => (
+              <div key={i} className={`service-card animate-fade-in stagger-${i+1}`}>
+                <div className="service-image-container">
+                  <img src={s.img} alt={s.t} />
+                  <div className="service-icon-badge">
+                    {s.icon}
+                  </div>
+                </div>
+                <div className="service-content">
+                  <h4>{s.t}</h4>
+                  <p>{s.d}</p>
+                  <a href="#" className="service-link">En savoir plus <span>→</span></a>
+                </div>
               </div>
-              <h3 className="font-montserrat">Conférences</h3>
-              <p>Tables rondes de haut niveau avec des experts du secteur et des leaders d'opinion.</p>
-            </div>
-            <div className="feature-card animate-fade-in stagger-2">
-              <div style={{ color: 'var(--bem-red)', fontSize: '2rem', marginBottom: '20px' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              </div>
-              <h3 className="font-montserrat">Pitch & Expo</h3>
-              <p>Mise en lumière de projets disruptifs et stands d'exposition interactifs.</p>
-            </div>
-            <div className="feature-card animate-fade-in stagger-3">
-              <div style={{ color: 'var(--bem-red)', fontSize: '2rem', marginBottom: '20px' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-              </div>
-              <h3 className="font-montserrat">Success Story</h3>
-              <p>Retours d'expérience inspirants de parcours entrepreneuriaux d'exception.</p>
-            </div>
-            <div className="feature-card animate-fade-in stagger-4">
-              <div style={{ color: 'var(--bem-red)', fontSize: '2rem', marginBottom: '20px' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </div>
-              <h3 className="font-montserrat">Networking</h3>
-              <p>Espace privilégié d'échanges stratégiques entre les acteurs clés de l'écosystème.</p>
-            </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '60px' }}>
+            <Link to="/tickets" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '0.9rem' }}>
+              Découvrir tous nos services
+            </Link>
           </div>
         </div>
       </section>
