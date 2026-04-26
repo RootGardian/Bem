@@ -19,7 +19,7 @@ const Legal = () => {
         <section style={{ marginBottom: '40px' }}>
           <h2 className="font-montserrat" style={{ fontSize: '1.2rem', color: 'var(--bem-red)', marginBottom: '20px', textTransform: 'uppercase' }}>2. Hébergement</h2>
           <p style={{ lineHeight: '1.8', color: 'var(--text-dark)' }}>
-            Le site est hébergé par <strong><Render></Render> Inc.</strong><br />
+            Le site est hébergé par <strong>Render.com</strong><br />
             Adresse : 104 10th St, San Francisco, CA 94103, USA.
           </p>
         </section>
