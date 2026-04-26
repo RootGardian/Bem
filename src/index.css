@@ -1,15 +1,15 @@
 :root {
-  --bem-red: #D1063D;
-  --bem-red-dark: #C40030;
-  --bem-blue-night: #0D1B2A;
-  --bem-blue-light: #1B2631;
-  --text-dark: #1B2631;
-  --text-gray: #5D6D7E;
+  --bem-red: #C40030;
+  --bem-red-dark: #A00028;
+  --bem-blue-night: #2C3E50;
+  --bem-blue-light: #34495E;
+  --text-dark: #2C3E50;
+  --text-gray: #7F8C8D;
   --white: #FFFFFF;
-  --bg-light: #F4F7F9;
+  --bg-light: #F8F9FA;
   --border-radius: 4px;
-  --bem-red-shadow: rgba(209, 6, 61, 0.1);
-  --bem-red-shadow-heavy: rgba(209, 6, 61, 0.2);
+  --bem-red-shadow: rgba(196, 0, 48, 0.1);
+  --bem-red-shadow-heavy: rgba(196, 0, 48, 0.2);
 }
 
 * {
@@ -42,6 +42,34 @@ h1, h2, h3, .font-montserrat {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+  text-transform: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0; /* Hidden initially for staggered entry */
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
 
 .container {
   max-width: 1200px;
@@ -146,14 +174,49 @@ section {
   border-radius: var(--border-radius);
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0,0,0,0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--bem-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-color: rgba(196, 0, 48, 0.1);
+}
+
+.feature-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Stats Cards Tech Style */
+.stats-card-tech {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stats-card-tech:hover {
+  background: rgba(255, 255, 255, 0.07);
   border-color: var(--bem-red);
+  transform: translateY(-5px);
 }
 
 .feature-card i {
