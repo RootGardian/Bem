@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Registration = () => {
   const location = useLocation();
   const category = location.state?.category || "Pass Visiteur";
+  const isFree = category.toLowerCase().includes('visiteur') || category.toLowerCase().includes('intervenant');
   
   const [form, setForm] = useState({
     fn: '',
@@ -20,8 +21,8 @@ const Registration = () => {
   const tags = ["Tech", "Finance", "Agro-industrie", "Services", "Artisanat"];
   
   const phoneNumbers = {
-    wave: '778878269',
-    om: '778878269'
+    wave: '711228383',
+    om: '711228383'
   };
 
   const handleChange = (e) => {
@@ -43,52 +44,62 @@ const Registration = () => {
   };
 
   return (
-    <div style={{ padding: '100px 0', background: 'var(--bg-light)', minHeight: '80vh' }}>
-      <div className="container">
-        <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--bem-red)', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', marginBottom: '30px', textTransform: 'uppercase' }}>
+    <div style={{ padding: '120px 0', background: 'var(--bg-light)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+      {/* Decorative elements */}
+      <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '40%', height: '40%', background: 'rgba(196, 0, 48, 0.03)', borderRadius: '50%', filter: 'blur(80px)', zIndex: 0 }}></div>
+      <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '30%', height: '30%', background: 'rgba(27, 38, 49, 0.03)', borderRadius: '50%', filter: 'blur(60px)', zIndex: 0 }}></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+        <Link to="/tickets" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--bem-red)', textDecoration: 'none', fontWeight: 800, fontSize: '0.85rem', marginBottom: '40px', textTransform: 'uppercase', letterSpacing: '1px' }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-          Retour à l'accueil
+          Changer de pack
         </Link>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '50px' }}>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '60px', alignItems: 'start' }}>
           {/* FORM */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-            <div style={{ background: 'white', padding: '40px', borderRadius: '4px', boxShadow: '0 10px 40px rgba(0,0,0,0.05)', borderTop: '5px solid var(--bem-red)' }}>
-              <h1 style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '2rem', textTransform: 'uppercase', marginBottom: '35px', color: 'var(--bem-blue-night)', letterSpacing: '-0.5px' }}>Inscription</h1>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+            <div style={{ background: 'white', padding: '50px', borderRadius: '4px', boxShadow: '0 20px 60px rgba(0,0,0,0.04)', borderTop: '6px solid var(--bem-red)' }}>
+              <div style={{ marginBottom: '40px' }}>
+                <h1 style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '2.5rem', textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '-1.5px', marginBottom: '10px' }}>Finaliser <span style={{ color: 'var(--bem-red)' }}>votre inscription</span></h1>
+                <p style={{ color: 'var(--text-gray)', fontSize: '1.1rem' }}>Remplissez les informations pour générer votre badge personnalisé.</p>
+              </div>
+
               <form onSubmit={(e) => e.preventDefault()}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px', marginBottom: '35px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-gray)', letterSpacing: '0.5px' }}>Prénom</label>
-                    <input type="text" id="fn" placeholder="Ex: Amadou" value={form.fn} onChange={handleChange} style={{ padding: '14px', border: '1px solid #e0e6ed', borderRadius: '4px', fontSize: '1rem', outline: 'none' }} />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '40px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>Prénom</label>
+                    <input type="text" id="fn" placeholder="Ex: Amadou" value={form.fn} onChange={handleChange} style={{ padding: '16px', border: '2px solid #f1f5f9', borderRadius: '4px', fontSize: '1rem', outline: 'none', background: '#f8fafc', transition: '0.3s', fontFamily: 'inherit' }} onFocus={e => e.target.style.borderColor = 'var(--bem-red)'} onBlur={e => e.target.style.borderColor = '#f1f5f9'} />
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-gray)', letterSpacing: '0.5px' }}>Nom</label>
-                    <input type="text" id="ln" placeholder="Ex: Sow" value={form.ln} onChange={handleChange} style={{ padding: '14px', border: '1px solid #e0e6ed', borderRadius: '4px', fontSize: '1rem', outline: 'none' }} />
-                  </div>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px', marginBottom: '35px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-gray)', letterSpacing: '0.5px' }}>Poste</label>
-                    <input type="text" id="jt" placeholder="Ex: Directeur" value={form.jt} onChange={handleChange} style={{ padding: '14px', border: '1px solid #e0e6ed', borderRadius: '4px', fontSize: '1rem', outline: 'none' }} />
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-gray)', letterSpacing: '0.5px' }}>Entreprise</label>
-                    <input type="text" id="co" placeholder="Ex: BEM Dakar" value={form.co} onChange={handleChange} style={{ padding: '14px', border: '1px solid #e0e6ed', borderRadius: '4px', fontSize: '1rem', outline: 'none' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>Nom</label>
+                    <input type="text" id="ln" placeholder="Ex: Sow" value={form.ln} onChange={handleChange} style={{ padding: '16px', border: '2px solid #f1f5f9', borderRadius: '4px', fontSize: '1rem', outline: 'none', background: '#f8fafc', transition: '0.3s' }} onFocus={e => e.target.style.borderColor = 'var(--bem-red)'} onBlur={e => e.target.style.borderColor = '#f1f5f9'} />
                   </div>
                 </div>
 
-                <label style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-gray)', letterSpacing: '0.5px' }}>Secteurs d'intérêt</label>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '15px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', marginBottom: '40px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>Poste Actuel</label>
+                    <input type="text" id="jt" placeholder="Ex: Directeur" value={form.jt} onChange={handleChange} style={{ padding: '16px', border: '2px solid #f1f5f9', borderRadius: '4px', fontSize: '1rem', outline: 'none', background: '#f8fafc', transition: '0.3s' }} onFocus={e => e.target.style.borderColor = 'var(--bem-red)'} onBlur={e => e.target.style.borderColor = '#f1f5f9'} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>Entreprise / Institution</label>
+                    <input type="text" id="co" placeholder="Ex: BEM Dakar" value={form.co} onChange={handleChange} style={{ padding: '16px', border: '2px solid #f1f5f9', borderRadius: '4px', fontSize: '1rem', outline: 'none', background: '#f8fafc', transition: '0.3s' }} onFocus={e => e.target.style.borderColor = 'var(--bem-red)'} onBlur={e => e.target.style.borderColor = '#f1f5f9'} />
+                  </div>
+                </div>
+
+                <label style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>Secteurs d'intérêt</label>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '20px' }}>
                   {tags.map(tag => (
                     <div key={tag} onClick={() => toggleTag(tag)} style={{ 
-                      padding: '10px 18px', 
-                      background: selectedTags.includes(tag) ? 'var(--bem-red)' : '#f8fafc', 
-                      color: selectedTags.includes(tag) ? 'white' : 'var(--text-dark)',
-                      border: selectedTags.includes(tag) ? '1px solid var(--bem-red)' : '1px solid #e2e8f0',
-                      borderRadius: '4px', 
+                      padding: '12px 24px', 
+                      background: selectedTags.includes(tag) ? 'var(--bem-red)' : 'white', 
+                      color: selectedTags.includes(tag) ? 'white' : 'var(--bem-blue-night)',
+                      border: '2px solid',
+                      borderColor: selectedTags.includes(tag) ? 'var(--bem-red)' : '#f1f5f9',
+                      borderRadius: '50px', 
                       cursor: 'pointer', 
-                      fontSize: '0.8rem', 
-                      fontWeight: 700,
+                      fontSize: '0.85rem', 
+                      fontWeight: 800,
                       transition: 'all 0.3s'
                     }}>
                       {tag}
@@ -99,116 +110,123 @@ const Registration = () => {
             </div>
 
             {/* PAYMENT SECTION */}
-            {!category.includes('GRATUIT') && (
-              <div style={{ background: 'white', padding: '40px', borderRadius: '4px', boxShadow: '0 10px 40px rgba(0,0,0,0.05)', borderLeft: '5px solid var(--bem-red)' }}>
-                <h3 style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.2rem', textTransform: 'uppercase', marginBottom: '25px', color: 'var(--bem-blue-night)' }}>Méthode de Paiement</h3>
+            {!isFree && (
+              <div style={{ background: 'white', padding: '50px', borderRadius: '4px', boxShadow: '0 20px 60px rgba(0,0,0,0.04)', borderLeft: '6px solid var(--bem-red)', animation: 'slideUp 0.5s ease-out' }}>
+                <h3 style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '1.4rem', textTransform: 'uppercase', marginBottom: '30px', color: 'var(--bem-blue-night)', letterSpacing: '-0.5px' }}>Règlement par <span style={{ color: 'var(--bem-red)' }}>Mobile Money</span></h3>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '30px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
                   <button 
                     onClick={() => setPaymentMethod('wave')}
                     style={{ 
-                      padding: '20px', 
-                      borderRadius: '8px', 
-                      border: paymentMethod === 'wave' ? '2px solid #1ba2f1' : '1px solid #e2e8f0',
+                      padding: '25px', 
+                      borderRadius: '12px', 
+                      border: paymentMethod === 'wave' ? '3px solid #1ba2f1' : '2px solid #f1f5f9',
                       background: paymentMethod === 'wave' ? '#f0f9ff' : 'white',
                       cursor: 'pointer',
                       display: 'flex',
-                      flexDirection: 'column',
                       alignItems: 'center',
-                      gap: '10px'
+                      justifyContent: 'center',
+                      gap: '15px',
+                      transition: '0.3s'
                     }}
                   >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Wave_Logo_Color.png" alt="Wave" style={{ height: '30px' }} />
-                    <span style={{ fontWeight: 700, fontSize: '0.8rem', color: '#1ba2f1' }}>WAVE</span>
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#1ba2f1', display: paymentMethod === 'wave' ? 'block' : 'none' }}></div>
+                    <span style={{ fontWeight: 900, fontSize: '1rem', color: '#1ba2f1', letterSpacing: '1px' }}>WAVE PAY</span>
                   </button>
                   <button 
                     onClick={() => setPaymentMethod('om')}
                     style={{ 
-                      padding: '20px', 
-                      borderRadius: '8px', 
-                      border: paymentMethod === 'om' ? '2px solid #ff7900' : '1px solid #e2e8f0',
+                      padding: '25px', 
+                      borderRadius: '12px', 
+                      border: paymentMethod === 'om' ? '3px solid #ff7900' : '2px solid #f1f5f9',
                       background: paymentMethod === 'om' ? '#fff7ed' : 'white',
                       cursor: 'pointer',
                       display: 'flex',
-                      flexDirection: 'column',
                       alignItems: 'center',
-                      gap: '10px'
+                      justifyContent: 'center',
+                      gap: '15px',
+                      transition: '0.3s'
                     }}
                   >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Orange_logo.svg/1024px-Orange_logo.svg.png" alt="Orange Money" style={{ height: '30px' }} />
-                    <span style={{ fontWeight: 700, fontSize: '0.8rem', color: '#ff7900' }}>ORANGE MONEY</span>
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff7900', display: paymentMethod === 'om' ? 'block' : 'none' }}></div>
+                    <span style={{ fontWeight: 900, fontSize: '1rem', color: '#ff7900', letterSpacing: '1px' }}>ORANGE MONEY</span>
                   </button>
                 </div>
 
                 {paymentMethod && (
-                  <div style={{ animation: 'fadeIn 0.3s' }}>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', marginBottom: '15px' }}>
-                      Veuillez effectuer le transfert au numéro suivant :
-                    </p>
-                    <div style={{ background: '#f8fafc', padding: '20px', borderRadius: '4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', border: '1px dashed #cbd5e1' }}>
-                      <span style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.4rem', color: 'var(--bem-blue-night)' }}>{phoneNumbers[paymentMethod]}</span>
-                      <button 
-                        onClick={() => handleCopy(phoneNumbers[paymentMethod])}
-                        style={{ background: copied ? '#10b981' : 'var(--bem-blue-night)', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700, cursor: 'pointer', transition: '0.3s' }}
-                      >
-                        {copied ? 'COPIÉ !' : 'COPIER'}
-                      </button>
+                  <div style={{ animation: 'fadeIn 0.4s' }}>
+                    <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '12px', border: '2px dashed #cbd5e1', marginBottom: '35px' }}>
+                      <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-gray)', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                        Envoyer au numéro :
+                      </p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '1.8rem', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>{phoneNumbers[paymentMethod]}</span>
+                        <button 
+                          onClick={() => handleCopy(phoneNumbers[paymentMethod])}
+                          style={{ background: copied ? '#10b981' : 'var(--bem-blue-night)', color: 'white', border: 'none', padding: '12px 25px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900, cursor: 'pointer', transition: '0.3s', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
+                        >
+                          {copied ? '✓ COPIÉ' : 'COPIER LE NUMÉRO'}
+                        </button>
+                      </div>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      <label style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--text-gray)', letterSpacing: '0.5px' }}>ID de Transaction</label>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                      <label style={{ fontSize: '0.75rem', fontWeight: 900, textTransform: 'uppercase', color: 'var(--bem-blue-night)', letterSpacing: '1px' }}>ID de Transaction</label>
                       <input 
                         type="text" 
                         placeholder="Ex: S-240426-XXXXXX" 
                         value={transactionId}
                         onChange={(e) => setTransactionId(e.target.value)}
-                        style={{ padding: '14px', border: '1px solid #e0e6ed', borderRadius: '4px', fontSize: '1rem', outline: 'none' }} 
+                        style={{ padding: '18px', border: '2px solid #f1f5f9', borderRadius: '4px', fontSize: '1.1rem', outline: 'none', background: '#f8fafc', fontWeight: 700 }} 
                       />
-                      <p style={{ fontSize: '0.7rem', color: 'var(--text-gray)', fontStyle: 'italic' }}>Entrez le code reçu par SMS après votre paiement.</p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-gray)', fontSize: '0.8rem' }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <span>Saisissez le code de confirmation reçu par SMS.</span>
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
             )}
             
-            <button className="btn-primary" style={{ width: '100%', padding: '20px', fontSize: '1rem', fontWeight: 800 }}>
-              {category.includes('GRATUIT') ? 'VALIDER MON INSCRIPTION' : 'CONFIRMER ET ENVOYER'}
+            <button className="btn-primary" style={{ width: '100%', padding: '25px', fontSize: '1.1rem', fontWeight: 900, borderRadius: '4px', letterSpacing: '1px', boxShadow: '0 20px 40px rgba(196, 0, 48, 0.2)' }}>
+              {isFree ? 'VALIDER MON INSCRIPTION' : 'CONFIRMER LE PAIEMENT ET ENVOYER'}
             </button>
           </div>
 
           {/* BADGE SIDEBAR */}
           <div style={{ position: 'sticky', top: '120px' }}>
-            <div style={{ background: 'white', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', marginBottom: '30px' }}>
-              <div style={{ background: 'var(--bem-blue-night)', color: 'white', padding: '18px', textAlign: 'center', fontFamily: 'Montserrat', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '2px' }}>APERÇU DU BADGE</div>
-              <div style={{ padding: '40px 30px', textAlign: 'center' }}>
-                <div style={{ width: '140px', height: '140px', background: '#f8fafc', margin: '0 auto 25px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', border: '1px solid #f1f5f9' }}>
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#e2e8f0" strokeWidth="1"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                  <div style={{ position: 'absolute', color: 'rgba(209, 6, 61, 0.2)', fontWeight: 900, transform: 'rotate(-45deg)', fontSize: '0.7rem', border: '1px solid', padding: '2px 8px', textTransform: 'uppercase', letterSpacing: '1px' }}>En attente</div>
+            <div style={{ background: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.1)', marginBottom: '40px' }}>
+              <div style={{ background: 'var(--bem-blue-night)', color: 'white', padding: '20px', textAlign: 'center', fontFamily: 'Montserrat', fontWeight: 900, fontSize: '0.8rem', letterSpacing: '2px' }}>VOTRE BADGE NUMÉRIQUE</div>
+              <div style={{ padding: '50px 40px', textAlign: 'center' }}>
+                <div style={{ width: '160px', height: '160px', background: '#f8fafc', margin: '0 auto 30px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', border: '2px solid #f1f5f9' }}>
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#e2e8f0" strokeWidth="1"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  <div style={{ position: 'absolute', color: 'var(--bem-red)', fontWeight: 900, transform: 'rotate(-45deg)', fontSize: '0.8rem', border: '2px solid', padding: '4px 12px', textTransform: 'uppercase', letterSpacing: '1px', background: 'white', boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}>En attente</div>
                 </div>
-                <div style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.5rem', textTransform: 'uppercase', color: 'var(--bem-blue-night)', marginBottom: '8px', minHeight: '1.8rem', letterSpacing: '-0.5px' }}>
-                  {`${form.fn} ${form.ln}`.trim() || "NOM COMPLET"}
+                <div style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '1.8rem', textTransform: 'uppercase', color: 'var(--bem-blue-night)', marginBottom: '10px', minHeight: '2.2rem', letterSpacing: '-1px' }}>
+                  {`${form.fn} ${form.ln}`.trim() || "PRÉNOM NOM"}
                 </div>
-                <div style={{ fontSize: '0.95rem', color: 'var(--text-gray)', marginBottom: '30px', minHeight: '1.2rem', fontWeight: 500 }}>
-                  {form.jt && form.co ? `${form.jt} @ ${form.co}` : "Poste @ Entreprise"}
+                <div style={{ fontSize: '1rem', color: 'var(--text-gray)', marginBottom: '35px', minHeight: '1.2rem', fontWeight: 600 }}>
+                  {form.jt && form.co ? `${form.jt} @ ${form.co}` : "Poste Actuel @ Entreprise"}
                 </div>
-                <div style={{ background: 'var(--bem-red)', color: 'white', padding: '12px', margin: '0 -30px -40px', fontFamily: 'Montserrat', fontWeight: 800, fontSize: '0.9rem', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                <div style={{ background: 'var(--bem-red)', color: 'white', padding: '15px', margin: '0 -40px -50px', fontFamily: 'Montserrat', fontWeight: 900, fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                   {category}
                 </div>
               </div>
             </div>
 
-            <div style={{ background: 'var(--bem-blue-night)', color: 'white', padding: '30px', borderRadius: '4px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Ticket sélectionné :</span>
-                <span style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1rem', color: 'var(--bem-red)' }}>{category}</span>
+            <div style={{ background: 'var(--bem-blue-night)', color: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', backdropFilter: 'blur(10px)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px' }}>
+                <span style={{ fontSize: '1rem', opacity: 0.7, fontWeight: 500 }}>Ticket :</span>
+                <span style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.1rem', color: 'var(--bem-red)' }}>{category}</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Total à régler :</span>
-                <span style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.6rem' }}>{category.includes('Standard') ? '25 000 CFA' : category.includes('Premium') ? '35 000 CFA' : category.includes('Gold') ? '50 000 CFA' : category.includes('Pack') ? 'Voir Pack' : 'GRATUIT'}</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '35px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px' }}>
+                <span style={{ fontSize: '1.1rem', opacity: 0.7, fontWeight: 500 }}>Total :</span>
+                <span style={{ fontFamily: 'Montserrat', fontWeight: 900, fontSize: '2.2rem' }}>{isFree ? 'OFFERT' : category.includes('Standard') ? '25 000 CFA' : category.includes('Premium') ? '35 000 CFA' : category.includes('Gold') ? '50 000 CFA' : category.includes('Pack') ? 'Voir Pack' : 'OFFERT'}</span>
               </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <input type="text" placeholder="Code promo" style={{ flex: 1, padding: '12px', fontSize: '0.85rem', borderRadius: '4px', border: 'none', background: 'rgba(255,255,255,0.1)', color: 'white' }} />
-                <button style={{ background: 'var(--bem-red)', color: 'white', border: 'none', padding: '0 20px', borderRadius: '4px', fontWeight: 800, fontSize: '0.7rem', textTransform: 'uppercase', cursor: 'pointer', transition: '0.3s' }}>Appliquer</button>
+              <div style={{ display: 'flex', gap: '15px' }}>
+                <input type="text" placeholder="Code promo" style={{ flex: 1, padding: '16px', fontSize: '0.9rem', borderRadius: '4px', border: 'none', background: 'rgba(255,255,255,0.1)', color: 'white', outline: 'none' }} />
+                <button style={{ background: 'var(--bem-red)', color: 'white', border: 'none', padding: '0 25px', borderRadius: '4px', fontWeight: 900, fontSize: '0.8rem', textTransform: 'uppercase', cursor: 'pointer', transition: '0.3s' }}>Appliquer</button>
               </div>
             </div>
           </div>
