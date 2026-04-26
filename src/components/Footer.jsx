@@ -7,6 +7,7 @@ const Footer = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px', marginBottom: '60px' }}>
           <div className="footer-col">
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1, marginBottom: '20px' }}>
+              <img src="/Logo_DM.png" alt="Dakar Marketing" style={{ height: '50px', width: 'fit-content', marginBottom: '15px' }} />
               <span style={{ color: 'var(--white)', fontWeight: 800, fontSize: '1.8rem', fontFamily: 'Montserrat' }}>BEM</span>
               <span style={{ color: 'var(--bem-red)', alignSelf: 'flex-end', fontSize: '0.7rem' }}>Dakar</span>
             </div>

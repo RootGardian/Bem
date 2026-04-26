@@ -57,6 +57,7 @@ const Home = () => {
         <div className="container">
           <div className="info-block">
             <div className="info-content">
+              <img src="/Logo_DM.png" alt="Logo Dakar Marketing" style={{ height: '80px', marginBottom: '20px' }} />
               <h3 className="font-montserrat">Qu'est-ce que Dakar Marketing ?</h3>
               <p>
                 Dakar Marketing est la Junior Entreprise de BEM Dakar, créée en 2014. Elle est la 1ère Junior Entreprise certifiée <strong>JE Global</strong> en Afrique subsaharienne.
