@@ -31,11 +31,11 @@ const Home = () => {
           <div className="animate-fade-in stagger-1" style={{ display: 'inline-block', background: 'rgba(196, 0, 48, 0.15)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '6px 20px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, marginBottom: '25px', letterSpacing: '2px' }}>
             DAKAR MARKETING • JUNIOR ENTREPRISE
           </div>
-          <h1 className="font-serif animate-fade-in stagger-2" style={{ fontSize: '5rem', fontWeight: 900, marginBottom: '20px', color: 'white', lineHeight: 1.1, letterSpacing: '-1px' }}>
-            Expertise en <span style={{ color: 'var(--bem-red)', fontStyle: 'italic' }}>Consultancy</span> Marketing
+          <h1 className="font-serif animate-fade-in stagger-2" style={{ fontSize: '4.8rem', fontWeight: 900, marginBottom: '20px', color: 'white', lineHeight: 1, letterSpacing: '-2px', textTransform: 'none' }}>
+            La Foire de <br /><span style={{ color: 'var(--bem-red)', fontStyle: 'italic' }}>l'Entrepreneuriat</span>
           </h1>
           <p className="animate-fade-in stagger-3" style={{ fontSize: '1.3rem', maxWidth: '800px', margin: '0 auto 50px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.8', fontWeight: 400 }}>
-            Junior entreprise leader au Sénégal, nous transformons l'innovation académique en solutions business innovantes et performantes.
+            Le rendez-vous incontournable de l'innovation et du leadership étudiant à Dakar. Rejoignez-nous pour deux jours d'échanges stratégiques organisés par Dakar Marketing.
           </p>
           <div className="actions animate-fade-in stagger-4" style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
             <Link to="/tickets" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '0.9rem' }}>Réserver mon pass</Link>
