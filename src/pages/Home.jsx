@@ -171,55 +171,71 @@ const Home = () => {
         </div>
       </section>
 
-      {/* POURQUOI COLLABORER AVEC NOUS */}
+      {/* POURQUOI COLLABORER AVEC NOUS (RE-DESIGNED) */}
       <section id="pourquoi-nous" style={{ background: 'white', padding: '120px 0' }}>
         <div className="container">
-          <div className="section-title" style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 className="font-serif animate-fade-in" style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-blue-night)', textTransform: 'none' }}>Pourquoi collaborer avec nous ?</h2>
-            <p style={{ color: 'var(--text-gray)', fontSize: '1.1rem', marginTop: '10px' }}>Une expertise certifiée pour des solutions marketing à fort impact.</p>
-          </div>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
-            {[
-              { 
-                t: "Expertise de Pointe", 
-                d: "Élaborez des stratégies solides grâce à nos consultants formés aux dernières méthodologies marketing.",
-                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-              },
-              { 
-                t: "Rigueur Académique", 
-                d: "Chaque étude bénéficie de la supervision d'experts et d'enseignants-chercheurs de BEM Dakar.",
-                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              },
-              { 
-                t: "Impact Garanti", 
-                d: "Collectez des insights précieux pour affiner votre stratégie et booster votre performance sur le marché.",
-                img: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=600&q=80",
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-              }
-            ].map((s, i) => (
-              <div key={i} className={`service-card animate-fade-in stagger-${i+1}`}>
-                <div className="service-image-container">
-                  <img src={s.img} alt={s.t} />
-                  <div className="service-icon-badge">
-                    {s.icon}
-                  </div>
-                </div>
-                <div className="service-content">
-                  <h4>{s.t}</h4>
-                  <p>{s.d}</p>
-                  <a href="#" className="service-link">En savoir plus <span>→</span></a>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '80px', alignItems: 'center' }}>
+            {/* Left Content */}
+            <div className="animate-fade-in stagger-1">
+              <h2 className="font-montserrat" style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--bem-blue-night)', marginBottom: '30px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                Pourquoi collaborer avec nous ?
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-gray)', lineHeight: '1.8', marginBottom: '40px' }}>
+                En devenant partenaire de la Foire de l'Entrepreneuriat, vous associez votre image à une initiative en faveur de la jeunesse, de l'innovation et du développement économique.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {[
+                  "Renforcer votre visibilité auprès d'un public ciblé",
+                  "Valoriser votre engagement sociétal et RSE",
+                  "Créer des connexions stratégiques avec l'écosystème",
+                  "Identifier et recruter de nouveaux talents",
+                  "Contribuer à la promotion de l'entrepreneuriat au Sénégal"
+                ].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', marginBottom: '20px', fontSize: '0.95rem', color: 'var(--text-dark)', fontWeight: 500 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bem-red)" strokeWidth="3" style={{ marginTop: '2px', flexShrink: 0 }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div style={{ textAlign: 'center', marginTop: '60px' }}>
-            <Link to="/tickets" className="btn btn-primary" style={{ padding: '18px 45px', fontSize: '0.9rem' }}>
-              Découvrir tous nos services
-            </Link>
+            {/* Right Red Box */}
+            <div className="animate-fade-in stagger-2">
+              <div style={{ background: 'var(--bem-red)', padding: '60px 50px', borderRadius: '8px', color: 'white', boxShadow: '0 20px 50px rgba(196, 0, 48, 0.2)' }}>
+                <h3 className="font-montserrat" style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '30px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  Cibles de l'événement
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '40px' }}>
+                  {[
+                    "Étudiants entrepreneurs & porteurs de projets",
+                    "Startups développées au sein des grandes écoles",
+                    "Partenaires institutionnels et professionnels"
+                  ].map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px', fontSize: '0.95rem', fontWeight: 600 }}>
+                      <div style={{ width: '6px', height: '6px', background: 'white', borderRadius: '50%' }}></div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/tickets" style={{ 
+                  display: 'block', 
+                  width: '100%', 
+                  background: 'white', 
+                  color: 'var(--bem-red)', 
+                  textAlign: 'center', 
+                  padding: '18px', 
+                  borderRadius: '4px', 
+                  textDecoration: 'none', 
+                  fontWeight: 800, 
+                  fontSize: '0.9rem', 
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  transition: '0.3s'
+                }}>
+                  Devenir Partenaire
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
