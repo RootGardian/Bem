@@ -60,52 +60,62 @@ const Tickets = () => {
   );
 
   return (
-    <div style={{ padding: '80px 0', background: 'var(--bg-light)', minHeight: '80vh' }}>
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '50px', fontWeight: 800, fontSize: '2.5rem', fontFamily: 'Montserrat' }}>Billetterie & Sponsoring</h1>
+    <div style={{ padding: '100px 0', background: 'var(--bg-light)', minHeight: '80vh' }}>
+      <div className="container" style={{ maxWidth: '850px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div style={{ display: 'inline-block', background: 'rgba(209, 6, 61, 0.1)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '5px 15px', borderRadius: '50px', fontSize: '0.7rem', fontWeight: 800, marginBottom: '15px', letterSpacing: '1px' }}>
+            BILLETTERIE OFFICIELLE
+          </div>
+          <h1 style={{ fontWeight: 800, fontSize: '2.8rem', color: 'var(--bem-blue-night)', fontFamily: 'Montserrat', margin: 0, textTransform: 'uppercase', letterSpacing: '-1px' }}>
+            Réservez votre <span style={{ color: 'var(--bem-red)' }}>accès</span>
+          </h1>
+          <p style={{ color: 'var(--text-gray)', marginTop: '15px', fontSize: '1.1rem' }}>Choisissez la formule qui correspond à votre profil.</p>
+        </div>
         
-        {/* INTERVENANT */}
-        <AccordionHeader id="intervenant" title="Intervenant" isActive={activeSection === 'intervenant'} />
-        {activeSection === 'intervenant' && (
-          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
-            <div className="tickets-grid">
-              <TicketCard price="OFFERT" title="Pass Intervenant" features={["Accès VIP Lounge", "Prise de parole sur scène", "Networking Privé"]} />
+        <div style={{ background: 'white', padding: '10px', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+          {/* INTERVENANT */}
+          <AccordionHeader id="intervenant" title="Intervenant" isActive={activeSection === 'intervenant'} />
+          {activeSection === 'intervenant' && (
+            <div className="accordion-content" style={{ padding: '20px', animation: 'fadeIn 0.3s' }}>
+              <div className="tickets-grid">
+                <TicketCard price="OFFERT" title="Pass Intervenant" features={["Accès VIP Lounge", "Prise de parole sur scène", "Networking Privé"]} />
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* VISITEUR */}
-        <AccordionHeader id="visiteur" title="Visiteurs" isActive={activeSection === 'visiteur'} />
-        {activeSection === 'visiteur' && (
-          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
-            <div className="tickets-grid">
-              <TicketCard price="GRATUIT" title="Pass Visiteur" features={["Accès stands", "Conférences"]} />
+          {/* VISITEUR */}
+          <AccordionHeader id="visiteur" title="Visiteurs" isActive={activeSection === 'visiteur'} />
+          {activeSection === 'visiteur' && (
+            <div className="accordion-content" style={{ padding: '20px', animation: 'fadeIn 0.3s' }}>
+              <div className="tickets-grid">
+                <TicketCard price="GRATUIT" title="Pass Visiteur" features={["Accès stands", "Conférences"]} />
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* EXPOSANT */}
-        <AccordionHeader id="exposant" title="Exposant" isActive={activeSection === 'exposant'} />
-        {activeSection === 'exposant' && (
-          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
-            <div className="tickets-grid">
-              <TicketCard price="25 000 CFA" title="Formule Standard" features={["Inclut un stand", "Accès aux panels"]} />
-              <TicketCard price="35 000 CFA" title="Formule Premium" features={["Inclut un stand", "Accès aux panels", "Déjeuners networking (Jour 1)"]} />
-              <TicketCard price="50 000 CFA" title="Formule Gold" badge="Top Seller" features={["Stand en emplacement privilégié", "Accès aux panels", "Déjeuners networking (2 jours)"]} />
+          {/* EXPOSANT */}
+          <AccordionHeader id="exposant" title="Exposant" isActive={activeSection === 'exposant'} />
+          {activeSection === 'exposant' && (
+            <div className="accordion-content" style={{ padding: '20px', animation: 'fadeIn 0.3s' }}>
+              <div className="tickets-grid">
+                <TicketCard price="25 000 CFA" title="Formule Standard" features={["Inclut un stand", "Accès aux panels"]} />
+                <TicketCard price="35 000 CFA" title="Formule Premium" features={["Inclut un stand", "Accès aux panels", "Déjeuners networking (Jour 1)"]} />
+                <TicketCard price="50 000 CFA" title="Formule Gold" badge="Top Seller" features={["Stand en emplacement privilégié", "Accès aux panels", "Déjeuners networking (2 jours)"]} />
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* NOS PACKS SPONSORING */}
-        <AccordionHeader id="sponsoring" title="Nos Packs Sponsoring" isActive={activeSection === 'sponsoring'} />
-        {activeSection === 'sponsoring' && (
-          <div className="accordion-content" style={{ marginBottom: '30px', animation: 'fadeIn 0.3s' }}>
-            <div className="tickets-grid">
-              <TicketCard price="250 000 CFA" title="Pack Standard" features={["Logo sur les supports de communication", "Visibilité sur les réseaux sociaux", "2 invitations aux conférences", "Stand d'exposition", "Distribution de supports promotionnels", "Association de l'image à l'événement"]} />
-              <TicketCard price="500 000 CFA" title="Pack Premium" badge="Best Value" features={["Logo en position prioritaire sur tous les supports", "Mention spéciale en tant que partenaire majeur", "Forte visibilité sur les réseaux sociaux", "4 invitations VIP aux conférences", "Stand premium (emplacement stratégique)", "Possibilité d'intervention (prise de parole)", "Distribution de supports promotionnels", "Association renforcée à l'événement", "Tarif préférentiel Dakar Marketing"]} />
+          {/* NOS PACKS SPONSORING */}
+          <AccordionHeader id="sponsoring" title="Nos Packs Sponsoring" isActive={activeSection === 'sponsoring'} />
+          {activeSection === 'sponsoring' && (
+            <div className="accordion-content" style={{ padding: '20px', animation: 'fadeIn 0.3s' }}>
+              <div className="tickets-grid">
+                <TicketCard price="250 000 CFA" title="Pack Standard" features={["Logo sur les supports de communication", "Visibilité sur les réseaux sociaux", "2 invitations aux conférences", "Stand d'exposition", "Distribution de supports promotionnels", "Association de l'image à l'événement"]} />
+                <TicketCard price="500 000 CFA" title="Pack Premium" badge="Best Value" features={["Logo en position prioritaire sur tous les supports", "Mention spéciale en tant que partenaire majeur", "Forte visibilité sur les réseaux sociaux", "4 invitations VIP aux conférences", "Stand premium (emplacement stratégique)", "Possibilité d'intervention (prise de parole)", "Distribution de supports promotionnels", "Association renforcée à l'événement", "Tarif préférentiel Dakar Marketing"]} />
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
