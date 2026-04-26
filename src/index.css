@@ -641,6 +641,145 @@ section {
   background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
   opacity: 0.1;
 }
+.presentation-section {
+  background: var(--bg-light);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.presentation-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.logo-box {
+  background: white;
+  display: inline-flex;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  marginBottom: 30px;
+}
+
+.logo-box img {
+  height: 60px;
+}
+
+.presentation-section h3 {
+  font-size: 3rem;
+  fontWeight: 900;
+  color: var(--bem-blue-night);
+  margin-bottom: 25px;
+  line-height: 1.1;
+  text-transform: none;
+}
+
+.presentation-section .description {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+.presentation-section .sub-description {
+  color: var(--text-gray);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.stats-mini {
+  display: flex;
+  gap: 40px;
+}
+
+.stats-mini .number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--bem-red);
+  font-family: 'Montserrat';
+}
+
+.stats-mini .label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--bem-blue-night);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stats-mini .divider {
+  width: 1px;
+  background: #e0e0e0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.value-card {
+  padding: 35px;
+  text-align: left;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.number-tag {
+  color: var(--bem-red);
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  opacity: 0.3;
+}
+
+.value-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--bem-blue-night);
+  font-weight: 800;
+}
+
+.value-card p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .presentation-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .presentation-section {
+    padding: 80px 0;
+  }
+  
+  .presentation-section h3 {
+    font-size: 2rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-mini {
+    gap: 20px;
+  }
+}
+
 .service-card {
   background: white;
   border-radius: 8px;

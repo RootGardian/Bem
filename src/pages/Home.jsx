@@ -3,16 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [activeDay, setActiveDay] = useState('vendredi');
-  const sponsors = [
-    { src: 'CBAO.jpg', alt: 'CBAO' },
-    { src: 'sonatel.png', alt: 'Sonatel' },
-    { src: 'mazars.png', alt: 'Mazars' },
-    { src: 'Deloitte.png', alt: 'Deloitte' },
-    { src: 'kedge.png', alt: 'Kedge' },
-    { src: 'junia.png', alt: 'Junia' },
-    { src: 'apix.png', alt: 'APIX' },
-    { src: 'der.png', alt: 'DER' }
-  ];
 
   return (
     <main>
@@ -57,8 +47,8 @@ const Home = () => {
           <div className="stats-row animate-fade-in stagger-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
             {[
               { n: '10+', t: "ÉDITIONS PASSÉES" },
-              { n: '1000+', t: "VISITEURS ATTENDUS" },
-              { n: '50+', t: "EXPOSANTS" }
+              { n: '300+', t: "VISITEURS ATTENDUS" },
+              { n: '30+', t: "EXPOSANTS" }
             ].map((s, idx) => (
               <div key={idx} className="stats-card-tech" style={{ padding: '30px', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}>
                 <div style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-red)', marginBottom: '5px', fontFamily: 'Montserrat' }}>{s.n}</div>
@@ -100,43 +90,44 @@ const Home = () => {
       </section>
 
       {/* DAKAR MARKETING PRESENTATION */}
-      <section id="presentation" style={{ background: 'var(--bg-light)', padding: '120px 0' }}>
+      <section id="presentation" className="presentation-section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '80px', alignItems: 'center' }}>
-            <div className="info-content animate-fade-in stagger-1">
-              <div style={{ background: 'white', display: 'inline-flex', padding: '15px', borderRadius: '4px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', marginBottom: '30px' }}>
-                <img src="/Logo_DM.png" alt="Logo Dakar Marketing" style={{ height: '60px' }} />
+          <div className="presentation-grid animate-fade-in stagger-1">
+            <div className="info-content">
+              <div className="logo-box">
+                <img src="/Logo_DM.png" alt="Logo Dakar Marketing" />
               </div>
-              <h3 className="font-serif" style={{ fontSize: '3rem', fontWeight: 900, color: 'var(--bem-blue-night)', marginBottom: '25px', lineHeight: '1.1', textTransform: 'none' }}>L'excellence au service de <br /><span style={{ color: 'var(--bem-red)' }}>votre croissance</span></h3>
-              <p style={{ fontSize: '1.15rem', marginBottom: '20px', color: 'var(--text-dark)', lineHeight: '1.7' }}>
+              <h3 className="font-serif">L'excellence au service de <br /><span style={{ color: 'var(--bem-red)' }}>votre croissance</span></h3>
+              <p className="description">
                 Dakar Marketing est la Junior Entreprise de BEM Dakar, créée en 2014. Elle est la 1ère Junior Entreprise certifiée <strong>JE Global</strong> en Afrique subsaharienne.
               </p>
-              <p style={{ color: 'var(--text-gray)', marginBottom: '40px', lineHeight: '1.7' }}>
+              <p className="sub-description">
                 Structurée comme un véritable cabinet de conseil, elle accompagne les entreprises dans leurs problématiques de marketing stratégique, digital et d'études de marché.
               </p>
-              <div style={{ display: 'flex', gap: '40px' }}>
-                <div>
-                  <div style={{ fontSize: '2.5rem', fontWeight: 900, color: 'var(--bem-red)', fontFamily: 'Montserrat' }}>10+</div>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--bem-blue-night)', textTransform: 'uppercase', letterSpacing: '1px' }}>Ans d'expertise</div>
+              <div className="stats-mini">
+                <div className="stat-item">
+                  <div className="number">10+</div>
+                  <div className="label">Ans d'expertise</div>
                 </div>
-                <div style={{ width: '1px', background: '#e0e0e0' }}></div>
-                <div>
-                  <div style={{ fontSize: '2.5rem', fontWeight: 900, color: 'var(--bem-red)', fontFamily: 'Montserrat' }}>500+</div>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--bem-blue-night)', textTransform: 'uppercase', letterSpacing: '1px' }}>Études réalisées</div>
+                <div className="divider"></div>
+                <div className="stat-item">
+                  <div className="number">500+</div>
+                  <div className="label">Études réalisées</div>
                 </div>
               </div>
             </div>
-            <div className="values-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+
+            <div className="values-grid">
               {[
                 { n: '01', t: 'Innovation', d: 'Solutions créatives et adaptées aux enjeux du marché.' },
                 { n: '02', t: 'Excellence', d: 'Rigueur académique et qualité professionnelle.' },
                 { n: '03', t: 'Réactivité', d: 'Respect strict des délais et agilité opérationnelle.' },
                 { n: '04', t: 'Efficacité', d: 'Impact mesurable et concret pour nos clients.' }
               ].map((v, i) => (
-                <div key={i} className={`feature-card animate-fade-in stagger-${i + 2}`} style={{ padding: '35px', textAlign: 'left', background: 'white' }}>
-                  <div style={{ color: 'var(--bem-red)', fontWeight: 900, fontSize: '1.4rem', marginBottom: '15px', opacity: 0.3 }}>{v.n}</div>
-                  <h4 className="font-montserrat" style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'var(--bem-blue-night)', fontWeight: 800 }}>{v.t}</h4>
-                  <p style={{ fontSize: '0.85rem', margin: 0, color: 'var(--text-gray)', lineHeight: '1.6' }}>{v.d}</p>
+                <div key={i} className={`value-card animate-fade-in stagger-${i + 2}`}>
+                  <div className="number-tag">{v.n}</div>
+                  <h4 className="font-montserrat">{v.t}</h4>
+                  <p>{v.d}</p>
                 </div>
               ))}
             </div>
