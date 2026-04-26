@@ -38,8 +38,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', fontSize: '0.8rem', color: '#7f8c8d' }}>
-          &copy; 2026 BEM Dakar. Tous droits réservés. Design by Junior Entreprise.
+        <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', fontSize: '0.8rem', color: '#7f8c8d', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px' }}>
+          <span>&copy; 2026 BEM Dakar. Tous droits réservés.</span>
+          <span>Powered by BlackCore Tech</span>
         </div>
       </div>
     </footer>

@@ -18,11 +18,23 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   color: var(--text-dark);
   background-color: var(--white);
   line-height: 1.6;
+  touch-action: manipulation;
+}
+
+input, select, textarea {
+  font-size: 16px !important;
 }
 
 h1, h2, h3, .font-montserrat {
