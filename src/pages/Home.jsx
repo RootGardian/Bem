@@ -307,11 +307,7 @@ const Home = () => {
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--bem-blue-night)', marginBottom: '10px' }}>Nos Clients</h2>
             <p style={{ color: 'var(--text-gray)', fontSize: '1.1rem' }}>Ils nous font confiance pour développer leur stratégie marketing</p>
           </div>
-          <div className="partner-grid" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
-            gap: '30px' 
-          }}>
+          <div className="clients-grid">
             {[
               { name: 'BEM Dakar', src: 'Bem.png' },
               { name: 'BEM Tech', src: 'bem_tech.png' },
