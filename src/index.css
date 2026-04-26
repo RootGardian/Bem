@@ -831,6 +831,91 @@ section {
   }
 }
 
+/* --- SENIOR UX / RESPONSIVE OPTIMIZATIONS --- */
+.registration-container-senior {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 1024px) {
+  .registration-container-senior {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 60px;
+  }
+}
+
+.form-row-smart {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 500px) {
+  .form-row-smart {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.payment-grid-adaptive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 640px) {
+  .payment-grid-adaptive {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tag-btn-touch {
+  padding: 12px 24px;
+  background: white;
+  border: 2px solid #f1f5f9;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tag-btn-touch.active {
+  background: var(--bem-red);
+  color: white;
+  border-color: var(--bem-red);
+  box-shadow: 0 10px 20px rgba(196, 0, 48, 0.2);
+}
+
+.badge-preview-card-senior {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 120px;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1023px) {
+  .badge-preview-card-senior {
+    position: static;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .badge-preview-card-senior {
+    transform: scale(0.95);
+  }
+}
+
 .service-card {
   background: white;
   border-radius: 8px;
