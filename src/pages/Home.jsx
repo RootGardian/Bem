@@ -90,7 +90,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-       {/* DAKAR MARKETING PRESENTATION */}
+      </section>
+
+      {/* DAKAR MARKETING PRESENTATION */}
       <section id="presentation" style={{ background: 'var(--bg-light)', padding: '120px 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '80px', alignItems: 'center' }}>
