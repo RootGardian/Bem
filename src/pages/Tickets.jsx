@@ -13,7 +13,7 @@ const Tickets = () => {
     <div className="ticket-card">
       <div className="ticket-left" style={{ flex: '0 0 40%', background: color, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '20px', color: 'white', textAlign: 'center' }}>
         <div className="price-box" style={{ background: 'white', color: color, padding: '15px', borderRadius: '4px', fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.2rem', marginBottom: '20px', width: '100%' }}>{price}</div>
-        <button className="btn-obtain" style={{ background: 'var(--bem-red)', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px', fontFamily: 'Montserrat', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', cursor: 'pointer', width: '100%' }} onClick={() => navigate('/registration')}>Choisir ce pack</button>
+        <button className="btn-obtain" style={{ background: 'var(--bem-red)', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px', fontFamily: 'Montserrat', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', cursor: 'pointer', width: '100%' }} onClick={() => navigate('/registration', { state: { category: title } })}>Choisir ce pack</button>
       </div>
       <div className="ticket-divider" style={{ width: '2px', borderLeft: '2px dashed #eee', background: 'white' }}></div>
       <div className="ticket-right" style={{ flex: 1, padding: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
