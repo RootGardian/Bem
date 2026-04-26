@@ -266,20 +266,19 @@ const Home = () => {
             {activeDay === 'vendredi' ? (
               <div className="animate-fade-in">
                 {[
-                  { t: "09:00 - 10:00", a: "Accueil & networking", i: "👥" },
-                  { t: "10:00 - 10:15", a: "Cérémonie d'ouverture Officielle", i: "🎙️" },
-                  { t: "10:15 - 10:35", a: "Keynote : L'avenir du Marketing", i: "✨" },
-                  { t: "10:35 - 11:35", a: "Table Ronde #1 : Innovation & IA", i: "🤖" },
-                  { t: "11:35 - 11:50", a: "Pause Café & Échanges", i: "☕" },
-                  { t: "11:50 - 12:50", a: "Table Ronde #2 : Marketing Digital", i: "🌐" },
-                  { t: "12:50 - 13:50", a: "Success Story : Parcours inspirants", i: "🏆" },
-                  { t: "13:50 - 14:00", a: "Cocktail de clôture", i: "🍸" }
+                  { t: "09:00 - 10:00", a: "Accueil & networking" },
+                  { t: "10:00 - 10:15", a: "Cérémonie d'ouverture Officielle" },
+                  { t: "10:15 - 10:35", a: "Keynote : L'avenir du Marketing" },
+                  { t: "10:35 - 11:35", a: "Table Ronde #1 : Innovation & IA" },
+                  { t: "11:35 - 11:50", a: "Pause Café & Échanges" },
+                  { t: "11:50 - 12:50", a: "Table Ronde #2 : Marketing Digital" },
+                  { t: "12:50 - 13:50", a: "Success Story : Parcours inspirants" },
+                  { t: "13:50 - 14:00", a: "Cocktail de clôture" }
                 ].map((item, idx) => (
                   <div key={idx} className={`timeline-item animate-fade-in stagger-${(idx % 5) + 1}`}>
                     <div className="timeline-time">
                       <span>{item.t.split(' - ')[0]}</span>
                     </div>
-                    <div style={{ fontSize: '1.5rem', marginRight: '10px' }}>{item.i}</div>
                     <div className="timeline-content">
                       <h4>{item.a}</h4>
                       <p style={{ fontSize: '0.85rem', color: 'var(--text-gray)', margin: '5px 0 0' }}>{item.t}</p>
@@ -290,17 +289,16 @@ const Home = () => {
             ) : (
               <div className="animate-fade-in">
                 {[
-                  { t: "09:00 - 10:00", a: "Ouverture de la Foire aux stands", i: "🎪" },
-                  { t: "10:00 - 13:00", a: "Expositions & Pitch Contest", i: "🚀" },
-                  { t: "13:00 - 14:00", a: "Pause Déjeuner Networking", i: "🍱" },
-                  { t: "14:00 - 18:30", a: "Foire (Après-midi) & Ateliers", i: "🛠️" },
-                  { t: "18:30 - 19:00", a: "Grand Final & Remise de prix", i: "🏅" }
+                  { t: "09:00 - 10:00", a: "Ouverture de la Foire aux stands" },
+                  { t: "10:00 - 13:00", a: "Expositions & Pitch Contest" },
+                  { t: "13:00 - 14:00", a: "Pause Déjeuner Networking" },
+                  { t: "14:00 - 18:30", a: "Foire (Après-midi) & Ateliers" },
+                  { t: "18:30 - 19:00", a: "Grand Final & Remise de prix" }
                 ].map((item, idx) => (
                   <div key={idx} className={`timeline-item animate-fade-in stagger-${(idx % 5) + 1}`}>
                     <div className="timeline-time">
                       <span>{item.t.split(' - ')[0]}</span>
                     </div>
-                    <div style={{ fontSize: '1.5rem', marginRight: '10px' }}>{item.i}</div>
                     <div className="timeline-content">
                       <h4>{item.a}</h4>
                       <p style={{ fontSize: '0.85rem', color: 'var(--text-gray)', margin: '5px 0 0' }}>{item.t}</p>
