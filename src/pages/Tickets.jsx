@@ -5,7 +5,7 @@ const Tickets = () => {
   const navigate = useNavigate();
 
   const TicketCard = ({ price, title, features, badge, color = 'var(--bem-blue-night)' }) => (
-    <div className="ticket-card" style={{ display: 'flex', background: 'white', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 10px 30px var(--bem-red-shadow)', minHeight: '220px' }}>
+    <div className="ticket-card">
       <div className="ticket-left" style={{ flex: '0 0 40%', background: color, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '20px', color: 'white', textAlign: 'center' }}>
         <div className="price-box" style={{ background: 'white', color: color, padding: '15px', borderRadius: '4px', fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.2rem', marginBottom: '20px', width: '100%' }}>{price}</div>
         <button className="btn-obtain" style={{ background: 'var(--bem-red)', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px', fontFamily: 'Montserrat', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', cursor: 'pointer', width: '100%' }} onClick={() => navigate('/registration')}>Choisir ce pack</button>
@@ -33,19 +33,19 @@ const Tickets = () => {
         
         {/* INTERVENANT */}
         <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Intervenant</h2>
-        <div className="tickets-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '30px' }}>
+        <div className="tickets-grid">
           <TicketCard price="OFFERT" title="Pass Intervenant" features={["Accès VIP Lounge", "Prise de parole sur scène", "Networking Privé"]} />
         </div>
 
         {/* VISITEUR */}
         <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Visiteurs</h2>
-        <div className="tickets-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '30px' }}>
+        <div className="tickets-grid">
           <TicketCard price="GRATUIT" title="Pass Visiteur" features={["Accès stands", "Conférences"]} />
         </div>
 
         {/* EXPOSANT */}
         <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Exposant</h2>
-        <div className="tickets-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '30px' }}>
+        <div className="tickets-grid">
           <TicketCard 
             price="25 000 CFA" 
             title="Formule Standard" 
@@ -66,7 +66,7 @@ const Tickets = () => {
 
         {/* NOS PACKS SPONSORING */}
         <h2 className="category-title" style={{ fontFamily: 'Montserrat', fontWeight: 700, fontSize: '1.5rem', textTransform: 'uppercase', margin: '40px 0 20px', borderLeft: '4px solid var(--bem-red)', paddingLeft: '15px' }}>Nos Packs Sponsoring</h2>
-        <div className="tickets-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '30px' }}>
+        <div className="tickets-grid">
           <TicketCard 
             price="250 000 CFA" 
             title="Pack Standard" 

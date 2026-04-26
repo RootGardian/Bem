@@ -32,7 +32,7 @@ const Registration = () => {
           <div style={{ background: 'white', padding: '40px', borderRadius: '4px', boxShadow: '0 5px 20px var(--bem-red-shadow)', borderTop: '5px solid var(--bem-red)' }}>
             <h1 style={{ fontFamily: 'Montserrat', fontWeight: 800, fontSize: '1.8rem', textTransform: 'uppercase', marginBottom: '30px' }}>Inscription</h1>
             <form onSubmit={(e) => e.preventDefault()}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '30px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginBottom: '30px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--bem-blue-night)' }}>Prénom</label>
                   <input type="text" id="fn" placeholder="Ex: Amadou" value={form.fn} onChange={handleChange} style={{ padding: '12px', border: '1px solid #ddd', borderRadius: '4px' }} />
