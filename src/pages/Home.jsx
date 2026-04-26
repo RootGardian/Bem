@@ -301,55 +301,49 @@ const Home = () => {
       </section>
 
       {/* PARTNERS SECTION */}
-      <section id="partenaires" style={{ background: 'white', padding: '100px 0' }}>
+      <section id="partenaires" style={{ background: '#F8FAFC', padding: '100px 0' }}>
         <div className="container">
-          <div className="section-title">
-            <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>Ils nous font confiance</h2>
-            <p style={{ color: 'var(--text-gray)', marginTop: '-10px' }}>Partenaires institutionnels et entreprises partenaires de la Foire.</p>
+          <div className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--bem-blue-night)', marginBottom: '10px' }}>Nos Clients</h2>
+            <p style={{ color: 'var(--text-gray)', fontSize: '1.1rem' }}>Ils nous font confiance pour développer leur stratégie marketing</p>
           </div>
-          <div className="partner-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2px', background: '#f0f0f0', border: '1px solid #f0f0f0' }}>
+          <div className="partner-grid" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', 
+            gap: '30px' 
+          }}>
             {[
+              { name: 'BEM Dakar', src: 'Bem.png' },
+              { name: 'BEM Tech', src: 'bem_tech.png' },
+              { name: 'L\'Oréal', src: 'loreal.jpg' },
+              { name: 'Samsung', src: 'samsung.png' },
+              { name: 'ESTP Paris', src: 'estp.png' },
               { name: 'Kirène avec Orange', src: 'kirene.png' },
               { name: 'Supeco', src: 'supeco.png' },
-              { name: 'L\'Oréal', src: 'loreal.jpg' },
-              { name: 'BEM Tech', src: 'bem_tech.png' },
-              { name: 'Samsung', src: 'samsung.png' },
-              { name: 'Yonnubio', src: 'Yono.png' },
-              { name: 'BEM Dakar', src: 'Bem.png' },
-              { name: 'Advention', src: 'advention.jpeg' },
-              { name: 'ESTP Paris', src: 'estp.png' },
-              { name: 'CBAO', src: 'cbao.jpeg' }
+              { name: 'Advention', src: 'advention.jpeg' }
             ].map((p, i) => (
-              <div key={i} className="partner-item" style={{ 
+              <div key={i} style={{ 
                 background: 'white', 
-                padding: '40px', 
+                padding: '40px 20px', 
+                borderRadius: '16px', 
+                boxShadow: '0 4px 25px rgba(0,0,0,0.03)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                minHeight: '150px',
-                transition: 'all 0.3s'
-              }}>
+                minHeight: '200px',
+                transition: 'transform 0.3s ease'
+              }}
+              onMouseOver={e => e.currentTarget.style.transform = 'translateY(-5px)'}
+              onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
+              >
                 <img 
                    src={`/${p.src}`} 
                    alt={p.name} 
                    style={{ 
-                     maxWidth: '100%', 
-                     maxHeight: '60px', 
-                     objectFit: 'contain',
-                     filter: 'grayscale(100%)',
-                     opacity: 0.6,
-                     transition: 'all 0.3s'
+                     maxWidth: '80%', 
+                     maxHeight: '80px', 
+                     objectFit: 'contain'
                    }} 
-                   onMouseOver={e => {
-                     e.currentTarget.style.filter = 'grayscale(0%)';
-                     e.currentTarget.style.opacity = '1';
-                     e.currentTarget.parentElement.style.boxShadow = 'inset 0 0 20px rgba(0,0,0,0.05)';
-                   }}
-                   onMouseOut={e => {
-                     e.currentTarget.style.filter = 'grayscale(100%)';
-                     e.currentTarget.style.opacity = '0.6';
-                     e.currentTarget.parentElement.style.boxShadow = 'none';
-                   }}
                 />
               </div>
             ))}
