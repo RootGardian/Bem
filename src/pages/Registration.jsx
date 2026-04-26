@@ -45,7 +45,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="registration-section" style={{ padding: '120px 0', background: 'var(--bg-light)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+    <div className="registration-section" style={{ padding: '160px 0 120px', background: 'var(--bg-light)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
       {/* Decorative elements */}
       <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '40%', height: '40%', background: 'rgba(196, 0, 48, 0.03)', borderRadius: '50%', filter: 'blur(80px)', zIndex: 0 }}></div>
       <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '30%', height: '30%', background: 'rgba(27, 38, 49, 0.03)', borderRadius: '50%', filter: 'blur(60px)', zIndex: 0 }}></div>
@@ -53,10 +53,26 @@ const Registration = () => {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div 
           onClick={() => navigate(-1)} 
-          style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--bem-red)', fontWeight: 800, fontSize: '0.85rem', marginBottom: '40px', textTransform: 'uppercase', letterSpacing: '1px' }}
+          style={{ 
+            cursor: 'pointer', 
+            display: 'inline-flex', 
+            alignItems: 'center', 
+            gap: '10px', 
+            color: 'var(--bem-red)', 
+            fontWeight: 900, 
+            fontSize: '0.75rem', 
+            marginBottom: '40px', 
+            textTransform: 'uppercase', 
+            letterSpacing: '2px',
+            background: 'white',
+            padding: '12px 20px',
+            borderRadius: '50px',
+            boxShadow: '0 5px 15px rgba(0,0,0,0.05)',
+            border: '1px solid #f1f5f9'
+          }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-          Page précédente
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          RETOUR
         </div>
 
         <div className="registration-grid">
