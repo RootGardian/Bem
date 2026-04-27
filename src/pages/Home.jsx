@@ -12,7 +12,7 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(rgba(13, 27, 42, 0.4), rgba(13, 27, 42, 0.4)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80")',
+        background: 'linear-gradient(rgba(13, 27, 42, 0.6), rgba(13, 27, 42, 0.6)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -23,13 +23,13 @@ const Home = () => {
         padding: '100px 0'
       }}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="animate-fade-in stagger-1" style={{ display: 'inline-block', background: 'rgba(196, 0, 48, 0.15)', border: '1px solid var(--bem-red)', color: 'var(--bem-red)', padding: '6px 20px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, marginBottom: '25px', letterSpacing: '2px' }}>
+          <div className="animate-fade-in stagger-1" style={{ display: 'inline-block', background: 'rgba(196, 0, 48, 0.3)', border: '1px solid var(--bem-red)', color: 'white', padding: '8px 24px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, marginBottom: '25px', letterSpacing: '2px', backdropFilter: 'blur(4px)' }}>
             DAKAR MARKETING • JUNIOR ENTREPRISE
           </div>
-          <h1 className="font-serif animate-fade-in stagger-2" style={{ fontSize: '5.5rem', fontWeight: 900, marginBottom: '20px', color: 'white', lineHeight: 1, letterSpacing: '-2px' }}>
+          <h1 className="font-serif animate-fade-in stagger-2" style={{ fontSize: '5.5rem', fontWeight: 900, marginBottom: '20px', color: 'white', lineHeight: 1, letterSpacing: '-2px', textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
             La Foire de <br />l'Entrepreneuriat
           </h1>
-          <p className="animate-fade-in stagger-3" style={{ fontSize: '1.5rem', maxWidth: '900px', margin: '0 auto 10px', color: 'white', lineHeight: '1.4', fontWeight: 500, fontFamily: 'Montserrat' }}>
+          <p className="animate-fade-in stagger-3" style={{ fontSize: '1.5rem', maxWidth: '900px', margin: '0 auto 10px', color: 'white', lineHeight: '1.4', fontWeight: 500, fontFamily: 'Montserrat', textShadow: '0 1px 5px rgba(0,0,0,0.2)' }}>
             L'événement entrepreneurial majeur de DAKAR MARKETING
           </p>
           <p className="animate-fade-in stagger-3" style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto 40px', color: 'rgba(255,255,255,0.9)', lineHeight: '1.6', fontWeight: 400 }}>
