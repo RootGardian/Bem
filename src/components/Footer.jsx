@@ -50,7 +50,7 @@ const Footer = () => {
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', fontSize: '0.8rem', color: '#7f8c8d', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px' }}>
           <span>&copy; 2026 Dakar Marketing. Tous droits réservés.</span>
-          <span>Powered by BlackCore Tech</span>
+          <span>Powered by <a href="https://blackcore-l8nt.onrender.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--white)'} onMouseOut={(e) => e.currentTarget.style.color = 'inherit'}>BlackCore Tech</a></span>
         </div>
       </div>
     </footer>
